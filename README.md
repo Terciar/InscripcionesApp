@@ -15,7 +15,7 @@ Toda contribución (sugerencias de cambio), consejo, critica constructiva, consu
 -----------------------
 Novedades esta siendo integrado con servicios externos para mejorar la calidad de su código. A continuación puede ver una lista de ellos.
 
-<< Proximamente Badget de los servicios >>
+<< Próximamente Badget de los servicios >>
 
 Licencia:
 [![License](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](http://opensource.org/licenses/MIT)
@@ -57,7 +57,7 @@ Licencia:
 
 * Deployment instructions:
   - cambiar el token ejecutando: rake secret
-  - Deberá crear las siguentes variables de entorno en su servidor:
+  - Deberá crear las siguientes variables de entorno en su servidor:
     * COVERALL
     * DATABASE_NAME
     * DATABASE_USER
@@ -106,7 +106,7 @@ Licencia:
     OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
     WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-	Copyright (c) 2015  Matias Mascazzini
+    Copyright (c) 2015  Matias Mascazzini
     
     Se concede permiso por la presente, de forma gratuita, a cualquier persona que obtenga una copia de este software y de los archivos de documentación asociados (el "Software"), para utilizar el Software sin restricción, incluyendo sin limitación los derechos de usar, copiar, modificar, fusionar, publicar, distribuir, sublicenciar, y/o vender copias de este Software, y para permitir a las personas a las que se les proporcione el Software a hacer lo mismo, sujeto a las siguientes condiciones:
 
