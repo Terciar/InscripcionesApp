@@ -77,3 +77,7 @@ group :development do
   gem 'spring'
 end
 
+group :production do
+  gem 'pg' #base de datos
+  gem 'rails_12factor' #algo de heroku para archivos estaticos.
+end
