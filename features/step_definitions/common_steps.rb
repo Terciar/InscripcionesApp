@@ -14,7 +14,7 @@ Dado(/^(?:estoy en la pantalla|estoy en la pantalla donde veo|que estoy en la pa
   case pantalla
   when 'identificación'
     visit('/users/sign_in')
-  when 'Mis proyectos'
+  when 'Inicio'
     visit('/')
   when 'las novedades'
     visit('/')
@@ -36,6 +36,18 @@ Entonces(/^mostrame la pagina$/) do
   save_and_open_page
 end
 
+Cuando(/^(?:presiono|que presione|que hice click en) el botón "(.*?)"$/) do |button|
+  #if button == "Guardar cambios"
+   #puts("current_user: #{@selection_process.organizer.user_id}#")
+   #puts("Weeeep!!!: #{current_user.id}#")
+   #save_and_open_page 
+  #end
+  #click_button button #me da problemas con Capybara.
+  #find_button(button).click #me da problemas con Capybara.
+  #save_and_open_page
+  click_link_or_button(button) # clicks on either links or buttons
+  
+end
 
 
 #Pa los mensajes de error.

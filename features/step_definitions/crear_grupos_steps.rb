@@ -1,22 +1,12 @@
-Dado(/^que soy administrador$/) do
-  pending # express the regexp above with the code you wish you had
-end
-
-Dado(/^que estoy en el pantalla principal$/) do
-  pending # express the regexp above with the code you wish you had
-end
-
-Dado(/^que hice click en el botón "(.*?)"$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
-end
-
-Cuando(/^presiono el botón "(.*?)"$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
-end
-
-
 Dado(/^que completo los datos del formulario$/) do
-  pending # express the regexp above with the code you wish you had
+   @group = Group.create!({
+    :nombre => nombre,
+    :sexo => 1,
+    :quota => 20,
+    :extended_quota  => 5,
+    :initial_age => 4,
+    :maximun_age => 5
+    })
 end
 
 Cuando(/^presiono el boton "(.*?)"$/) do |arg1|

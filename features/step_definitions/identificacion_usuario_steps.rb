@@ -1,18 +1,29 @@
 # encoding: utf-8
+Dado(/^que soy administador registrado$/) do
+   step %{existe un Usuario: "Sr. Pepito Argento", "admin@club.com", "clave12345" y "1"}
+end
+
+Dado(/^me identifico como "(.*?)"$/) do |usuario|
+  step %{completo mi email "#{usuario}" y contraseña "clave12345"}
+end
+
 Dado(/^que soy profesor registrado$/) do
+    step %{existe un Usuario: "Rubén Aguirre Jirafales", "profjirafales@elchavo.com", "clave12345" y "2"}
 end
 
 Dado(/^(?:que estoy identificado|que estoy logueado) como? "(.*?)"$/) do |tipo|
   if tipo == "profesor"
-    step %{existe un Usuario: "Rubén Aguirre Jirafales", "profjirafales@elchavo.com", "clave12345" y "1"}
+    step %{existe un Usuario: "Rubén Aguirre Jirafales", "profjirafales@elchavo.com", "clave12345" y "2"}
     step %{completo mi email "profjirafales@elchavo.com" y contraseña "clave12345"}
+  end
+
+  if tipo == "administrador"
+    step %{existe un Usuario: "Sr. Pepito Argento", "admin@club.com", "clave12345" y "1"}
+    step %{completo mi email "admin@club.com" y contraseña "clave12345"}
   end
 end
 
-Dado(/^me identifico como "(.*?)"$/) do |usuario|
-  step %{existe un Usuario: "Rubén Aguirre Jirafales", "#{usuario}", "clave12345" y "1"}
-  #step %{completo mi email "#{usuario}" y contraseña "clave12345"}
-end
+
 
 Dado(/^que el usuario esta "(.*?)"$/) do |estado|
   if estado == "habilitado"
