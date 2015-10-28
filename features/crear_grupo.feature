@@ -9,6 +9,7 @@ Antecedentes:
   Y me identifico como "admin@club.com"
   Y que estoy en la pantalla de "Inicio"
 
+@wip
 Escenario: crear un grupo.
  	Dado que hice click en el botón "Crear grupo"
  	Y que completo los datos del formulario

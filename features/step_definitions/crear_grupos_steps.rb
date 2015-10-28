@@ -1,4 +1,5 @@
 Dado(/^que completo los datos del formulario$/) do
+ pending
    @group = Group.create!({
     :nombre => nombre,
     :sexo => 1,
