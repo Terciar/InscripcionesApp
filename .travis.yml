@@ -8,9 +8,9 @@ env:
 bundler_args: "--without production"
 script:
 - RAILS_ENV=test
-#- bundle exec rake db:migrate --trace
-#- bundle exec rake db:test:prepare
-#- bundle exec rake cucumber
+- bundle exec rake db:migrate --trace
+- bundle exec rake db:test:prepare
+- bundle exec rake cucumber
 deploy:
   provider: heroku
   api_key:
@@ -21,8 +21,8 @@ deploy:
     all_branches: true #Para que haga deploy ante cualquier rama, sino solo cuando cambia la master.
 
   run:
-#    - "rake db:drop"
-#    - "rake db:schema:load --trace"
-#    - "rake db:seed"
-#    - "rake cucumber"
-#    - restart
+    - "rake db:drop"
+    - "rake db:schema:load --trace"
+    - "rake db:seed"
+    - "rake cucumber"
+    - restart
