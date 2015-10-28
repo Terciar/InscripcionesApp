@@ -1,14 +1,44 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>InscripcionesApp</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Inscripciones Terciar" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Inscripciones Terciar" %>">
+   <!-- Latest compiled and minified JavaScript -->
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <header>
+      <%= render 'layouts/navigation' %>
+    </header>
+    <main role="main">
+       <%= render 'layouts/messages' %>
+       <%= yield %>
+       <!-- Navegación -->
+         <%= breadcrumbs pretext: "", separator: " &rsaquo; ", style: :bootstrap %>
+       <!-- /Navegación -->
+    </main>
 
-<%= yield %>
+    <!-- Pie -->
+<hr>
+  <footer class="bottom">
+    <div class="container hidden-xs">
+     <ul class="nav navbar-nav pull-left">
+       <li><a href="https://github.com/matiasmasca/InscripcionesApp" class="fa fa-rocket"> Powered by Inscripciones - <time datetime="2015-06-01">2015</time></a></li>
+       <li><%= link_to ' Acerca de', pages_about_path, class: "fa fa-info-circle" %></li>
+       <li><%= link_to ' Contacto',  pages_contact_path, class: "fa fa-barcode" %></li>
+     </ul>
+   </div>
 
-</body>
+   <div class="container visible-xs">
+     <p class="navbar-text pull-left">Powered by Inscripciones - <time datetime="2015-06-01">2015</time></p>
+     <a href="https://github.com/matiasmasca/InscripcionesApp" class="navbar-btn btn-info btn pull-right">Inscripciones</a>
+   </div>
+ </footer>
+
+
+  </body>
 </html>
