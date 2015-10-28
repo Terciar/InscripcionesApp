@@ -12,5 +12,5 @@ Antecedentes:
 Escenario: crear un grupo.
  	Dado que hice click en el botón "Crear grupo"
  	Y que completo los datos del formulario
- 	Cuando presiono el botón "Crear"
+ 	Cuando presiono el botón "Guardar"
  	Entonces veo el mensaje "Grupo creado correctamente"

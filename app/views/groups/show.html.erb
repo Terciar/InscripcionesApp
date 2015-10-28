@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<p id="notice"><%= notice %></p> 
 
 <p>
   <strong>Nombre:</strong>
@@ -30,5 +30,6 @@
   <%= @group.maximun_age %>
 </p>
 
-<%= link_to 'Edit', edit_group_path(@group) %> |
-<%= link_to 'Back', groups_path %>
+<%= link_to 'Editar', edit_group_path(@group), class: "btn btn-default" if current_user.is_admin? %> |
+<%= link_to 'Volver', :back, class: "btn btn-default"   %>
+<%= link_to 'Lista grupos', groups_path, class: "btn btn-default"  %>

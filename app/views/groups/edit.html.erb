@@ -1,6 +1,8 @@
-<h1>Editing Group</h1>
+<h1>Editando grupo</h1>
 
 <%= render 'form' %>
-
-<%= link_to 'Show', @group %> |
-<%= link_to 'Back', groups_path %>
+<br>
+<div class="form-group">
+  <%= link_to 'Ver Grupo', @group, title:"Ver datos basicos del Grupo", class: "btn btn-default" %> |
+  <%= link_to 'Volver', :back, class: "btn btn-default" %>
+</div>
