@@ -4,8 +4,6 @@ ruby '2.2.0' #Versión de Ruby.
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 
 #gem 'bootstrap-sass'
 gem 'bootstrap-sass', '~> 3.3.5'
@@ -66,6 +64,9 @@ group :development, :test do
 
   gem 'capybara'         # lets Cucumber pretend to be a web browser #Supuestamente viene con cucumber-rails
   gem 'launchy'          # Abre programas. Nos sirve para: save_and_open_page
+
+  # Use sqlite3 as the database for Active Record
+  gem 'sqlite3'
 end
 
 group :development do
