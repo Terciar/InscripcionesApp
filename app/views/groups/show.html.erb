@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @group.nombre %>
+</p>
+
+<p>
+  <strong>Sexo:</strong>
+  <%= @group.sexo %>
+</p>
+
+<p>
+  <strong>Quota:</strong>
+  <%= @group.quota %>
+</p>
+
+<p>
+  <strong>Extended quota:</strong>
+  <%= @group.extended_quota %>
+</p>
+
+<p>
+  <strong>Initial age:</strong>
+  <%= @group.initial_age %>
+</p>
+
+<p>
+  <strong>Maximun age:</strong>
+  <%= @group.maximun_age %>
+</p>
+
+<%= link_to 'Edit', edit_group_path(@group) %> |
+<%= link_to 'Back', groups_path %>

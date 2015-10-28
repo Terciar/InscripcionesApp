@@ -1,13 +1,8 @@
 # encoding: utf-8
 # # save_and_open_page
-Entonces(/^veo un mensaje "(.*?)"$/) do |mensaje|
+Entonces(/^(?:veo un mensaje|veo el mensaje|veo un mensaje que dice )? "(.*?)"$/) do |mensaje|
   #Capybara Quering, sin RSpec. Usa MiniTest.
   assert page.has_content?(mensaje)
-end
-
-Entonces(/^veo un mensaje que dice "(.*?)"$/) do |mensaje|
- #Capybara Quering, sin RSpec.
- assert page.has_content?(mensaje)
 end
 
 Dado(/^(?:estoy en la pantalla|estoy en la pantalla donde veo|que estoy en la pantalla de)? "(.*?)"$/) do |pantalla|

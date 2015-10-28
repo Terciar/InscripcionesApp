@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 #Para administrar los usuarios
 scope "/admin" do
   resources :users
+  resources :groups
 end
 
 #paginas estaticas
