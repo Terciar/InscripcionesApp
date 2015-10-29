@@ -27,6 +27,10 @@ Esquema del escenario: datos correctos
     | Nombre1 | Varones | 4           | 7           | 25   | 5         	   |
     | Nombre2 | Mujeres | 4           | 7           | 25   | 5         	   |
     | Nombre3 | Mixto   | 4           | 7           | 25   | 5         	   |
+    | Nombre1 | Varones | 4           | 5           | 25   | 5             |
+    | Nombre2 | Varones | 6           | 7           | 25   | 5             |
+    | Nombre3 | Varones | 8           | 9           | 25   | 5             |
+    | Nombre3 | Varones | 10          | 12          | 25   | 5             |
 	  | Nombre3 | Mixto   | 4           | 7           | 25   |         	     |
 
 # Casos Extremos
