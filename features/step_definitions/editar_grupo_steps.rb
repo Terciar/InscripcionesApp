@@ -13,12 +13,23 @@ Cuando(/^yo edito un grupo$/) do
   click_on('Editar')
 end
 
-Cuando(/^cambio el nombre por "(.*?)"$/) do |nuevo_nombre|
-  @update_name = nuevo_nombre
-  @group.update_attributes!({ :nombre => @update_name })
+Cuando(/^cambio "(.*?)" por "(.*?)"$/) do |campo, valor|
+case campo
+  when "nombre"
+    @update_name = valor
+    @group.update_attributes!({ :nombre => @update_name })
 
-  if nuevo_nombre
-    fill_in "group_nombre", :with => nuevo_nombre
+    if valor
+      fill_in "group_nombre", :with => valor
+    end
+  when "cupo extra"
+    if valor
+      fill_in "group_extended_quota", :with => valor
+    end
+    @update_valor = valor
+    @group.update_attributes!({ :extended_quota => valor })
+  else
+
   end
 
   click_on("Guardar")
@@ -32,18 +43,18 @@ Entonces(/^veo que el nombre cambio$/) do
   assert_equal @update_name, nuevo_nombre #MiniTest assert_equal 'expected', 'actual'
 end
 
-Dado(/^que existe un Grupo llamado "(.*?)", sin cupo extra definido$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
+Dado(/^existe un grupo llamado "(.*?)", sin cupo extra definido$/) do |nombre_grupo|
+  # No hace falta crear el mock porque ya lo crea en Antecedentes.
+  @group.update_attributes!({ :extended_quota => nil })
 end
 
-Cuando(/^yo edito un Grupo$/) do
-  pending # express the regexp above with the code you wish you had
-end
-
-Cuando(/^cupo extra por "(.*?)"$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
+Cuando(/^cupo extra por "(.*?)"$/) do |cupo_extra|
+ 
 end
 
 Entonces(/^veo que la cupo extra cambio, sin afectar al nombre del grupo$/) do
-  pending # express the regexp above with the code you wish you had
+  step %{que estoy en la pantalla de "administración de grupos"}
+  page.has_table?('groups-list') #Que este la tabla
+  nuevo_valor = page.find('#groups-list > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(4)').text
+  assert_equal @update_valor, nuevo_valor #MiniTest assert_equal 'expected', 'actual'
 end

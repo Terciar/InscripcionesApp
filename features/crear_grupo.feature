@@ -1,7 +1,7 @@
 # language: es
-Característica: crear grupo colonia de vacaciones(tipo)
-	Como Administrador
-	Quiero Crear un grupo con un nombre y límites de temporada, edad, sexo.
+Característica: crear grupo colonia de vacaciones
+	Como administrador
+	Quiero Crear un grupo con un nombre y límites de cupo, edad, sexo.
 	Para obtener un ordenamiento automático de las inscripciones recibidas a través del sitio web.
 
 Antecedentes:
@@ -23,7 +23,7 @@ Esquema del escenario: datos correctos
   Entonces veo el mensaje "Grupo creado correctamente"
 
   Ejemplos: casos positivos
-    | Nombre  | sexo    | edad_minima | edad_maxima | cupo | cupo_extendido|
+    | nombre  | sexo    | edad_minima | edad_maxima | cupo | cupo_extendido|
     | Nombre1 | Varones | 4           | 7           | 25   | 5         	   |
     | Nombre2 | Mujeres | 4           | 7           | 25   | 5         	   |
     | Nombre3 | Mixto   | 4           | 7           | 25   | 5         	   |
@@ -56,7 +56,7 @@ Esquema del escenario: datos incorrectos
    Ejemplos: edades incorrectas
     | Nombre  | sexo    | edad_minima | edad_maxima | cupo | cupo_extendido|
 	  | Nombre3 | Mixto   | 2           | 7           | 25   | 5             |
-	  | Nombre3 | Mixto   | 4           | 100         | 5    | 5             |
+	  | Nombre3 | Mixto   | 4           | 15          | 5    | 5             |
 
    Ejemplos: tipos de datos incorrectos
     | Nombre  | sexo    | edad_minima | edad_maxima | cupo | cupo_extendido|
