@@ -1,5 +1,4 @@
 # encoding: utf-8
-# # save_and_open_page
 Entonces(/^(?:veo un mensaje|veo el mensaje|veo un mensaje que dice )? "(.*?)"$/) do |mensaje|
   #Capybara Quering, sin RSpec. Usa MiniTest.
   #save_and_open_page
@@ -42,7 +41,6 @@ Cuando(/^(?:presiono|que presione|que hice click en) el botón "(.*?)"$/) do |bu
   #find_button(button).click #me da problemas con Capybara.
   #save_and_open_page
   click_link_or_button(button) # clicks on either links or buttons
-  
 end
 
 

@@ -26,5 +26,4 @@ Dado(/^completo los datos del grupo con "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*
    #Crear mock
    # el proceso ya esta mokeado.
    @group = {"nombre" => nombre,"sexo" => sexo, "quota" => cupo, "extended_quota" => cupo_extendido, "initial_age" => edad_minima, "maximun_age" => edad_maxima}
-
 end

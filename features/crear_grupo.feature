@@ -37,22 +37,22 @@ Esquema del escenario: datos incorrectos
   Entonces veo el mensaje "error"
 	
   Ejemplos: faltan datos obligatorios
-    | Nombre  | sexo    | edad_minima | edad_maxima | cupo | cupo_extendido|
-    | 		    | Varones | 2           | 7           | 25   | 5         	   |
-    | Nombre2 | Seleccione el Sexo    | 4           | 100         | 25   | 5         	   |
-    | Nombre3 | Mujeres |             | 7           | 25   | 5             |
-	  | Nombre3 | Mixto   | 4           |             | 25   | 5             |
-	  | Nombre3 | Mixto   | 4           | 7           |      | 5             |
+    | Nombre  | sexo                | edad_minima | edad_maxima | cupo | cupo_extendido|
+    | 		    | Varones             | 2           | 7           | 25   | 5         	   |
+    | Nombre2 | Seleccione el Sexo  | 4           | 100         | 25   | 5         	   |
+    | Nombre3 | Mujeres             |             | 7           | 25   | 5             |
+	  | Nombre3 | Mixto               | 4           |             | 25   | 5             |
+	  | Nombre3 | Mixto               | 4           | 7           |      | 5             |
 	
    Ejemplos: longitudes cupo incorrectas
-  | Nombre  | sexo    | edad_minima | edad_maxima | cupo | cupo_extendido|
-	| Nombre3 | Mixto   | 4           | 7           | 26   | 5             |
-	| Nombre3 | Mixto   | 4           | 7           | 4    | 5             |
+    | Nombre  | sexo    | edad_minima | edad_maxima | cupo | cupo_extendido|
+	  | Nombre3 | Mixto   | 4           | 7           | 26   | 5             |
+	  | Nombre3 | Mixto   | 4           | 7           | 4    | 5             |
 
    Ejemplos: edades incorrectas
-  | Nombre  | sexo    | edad_minima | edad_maxima | cupo | cupo_extendido|
-	| Nombre3 | Mixto   | 2           | 7           | 25   | 5             |
-	| Nombre3 | Mixto   | 4           | 100          | 5    | 5             |
+    | Nombre  | sexo    | edad_minima | edad_maxima | cupo | cupo_extendido|
+	  | Nombre3 | Mixto   | 2           | 7           | 25   | 5             |
+	  | Nombre3 | Mixto   | 4           | 100         | 5    | 5             |
 
    Ejemplos: tipos de datos incorrectos
     | Nombre  | sexo    | edad_minima | edad_maxima | cupo | cupo_extendido|
@@ -63,9 +63,8 @@ Esquema del escenario: datos incorrectos
     | Nombre1 | Varones | 5.1         | 7           | 25   | 5         	   |
     | Nombre1 | Mujeres | 5           | 5.1         | 25   | 5         	   |
     | Nombre1 | Mixto   | 5           | 7           | 5.1  | 5         	   |
-	| Nombre1 | Mixto   | 5           | 7           | 25   | 5.1       	   |
+	  | Nombre1 | Mixto   | 5           | 7           | 25   | 5.1       	   |
     | Nombre1 | Varones | 5,1         | 7           | 25   | 5         	   |
     | Nombre1 | Mujeres | 5           | 5,1         | 25   | 5         	   |
     | Nombre1 | Mixto   | 5           | 7           | 5,1  | 5         	   |
-	| Nombre1 | Mixto   | 5           | 7           | 25   | 5,1       	   |
-
+	  | Nombre1 | Mixto   | 5           | 7           | 25   | 5,1       	   |
