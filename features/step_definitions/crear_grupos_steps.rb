@@ -17,15 +17,11 @@ end
 Dado(/^completo los datos del grupo con "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)"$/) do |nombre, sexo, edad_minima, edad_maxima, cupo, cupo_extendido|
    #save_and_open_page
    fill_in "group_nombre", :with => nombre
-   select sexo, :from => "sex_select"
-   fill_in "group_quota", :with => cupo
-   
+   select sexo, :from => "sex_select" if sexo
+   fill_in "group_quota", :with => cupo   
    fill_in "group_extended_quota", :with => cupo_extendido if cupo_extendido
    fill_in "group_initial_age", :with => edad_minima
    fill_in "group_maximun_age", :with => edad_maxima
-
-
-   #save_and_open_page
 
    #Crear mock
    # el proceso ya esta mokeado.
