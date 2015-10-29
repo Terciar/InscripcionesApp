@@ -12,7 +12,7 @@
 <!--/bienvenida -->
 
 <!--/Admin -->
-<% if user_signed_in? && current_user.is_admin?  %>
-  <%= render partial: "dashboard"  %>
+<% if user_signed_in?  %>
+  <%= render partial: "dashboard" if current_user.is_admin?  %>
 <% end %>
 <!--/Admin -->

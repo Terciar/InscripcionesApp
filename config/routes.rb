@@ -14,8 +14,12 @@ get 'pages/index'
 get 'pages/about'
 get 'pages/contact'
 
+authenticated do
+  get 'pages/index' => 'pages#index'
+  get 'admin/groups' => 'groups#index'
+end
 
-  root to: "pages#index"
+root to: "pages#index"
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

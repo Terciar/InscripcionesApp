@@ -11,8 +11,8 @@ Dado(/^(?:estoy en la pantalla|estoy en la pantalla donde veo|que estoy en la pa
     visit('/users/sign_in')
   when 'Inicio'
     visit('/')
-  when 'las novedades'
-    visit('/')
+  when 'administración de grupos'
+    visit('/admin/groups')
   else
     visit('/¿A donde queres ir?')
   end

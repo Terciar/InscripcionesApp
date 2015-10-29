@@ -17,7 +17,7 @@ Dado(/^(?:que estoy identificado|que estoy logueado) como? "(.*?)"$/) do |tipo|
     step %{completo mi email "profjirafales@elchavo.com" y contraseña "clave12345"}
   end
 
-  if tipo == "administrador"
+  if tipo == "Administrador"
     step %{existe un Usuario: "Sr. Pepito Argento", "admin@club.com", "clave12345" y "1"}
     step %{completo mi email "admin@club.com" y contraseña "clave12345"}
   end
