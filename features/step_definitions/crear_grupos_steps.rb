@@ -19,7 +19,8 @@ Dado(/^completo los datos del grupo con "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*
    fill_in "group_nombre", :with => nombre
    select sexo, :from => "sex_select"
    fill_in "group_quota", :with => cupo
-   fill_in "group_extended_quota", :with => cupo_extendido
+   
+   fill_in "group_extended_quota", :with => cupo_extendido if cupo_extendido
    fill_in "group_initial_age", :with => edad_minima
    fill_in "group_maximun_age", :with => edad_maxima
 

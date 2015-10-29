@@ -9,14 +9,14 @@ Antecedentes:
   Y me identifico como "admin@club.com"
   Y que estoy en la pantalla de "Inicio"
 
+#Camino feliz.
 Escenario: crear un grupo.
  	Dado que hice click en el botón "Crear grupo"
  	Y que completo los datos del formulario
  	Cuando presiono el botón "Guardar"
  	Entonces veo el mensaje "Grupo creado correctamente"
 
-#Casos extremos.
-Esquema del escenario: faltan datos
+Esquema del escenario: datos correctos
   Dado que hice click en el botón "Crear grupo"
   Y completo los datos del grupo con "<nombre>", "<sexo>", "<edad_minima>", "<edad_maxima>", "<cupo>", "<cupo_extendido>"						
   Cuando presiono el botón "Guardar"
