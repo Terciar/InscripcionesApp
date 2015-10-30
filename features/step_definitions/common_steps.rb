@@ -1,6 +1,7 @@
 # encoding: utf-8
-Entonces(/^(?:veo un mensaje|veo el mensaje|veo un mensaje que dice )? "(.*?)"$/) do |mensaje|
+Entonces(/^(?:veo un mensaje|veo el mensaje|veo un mensaje que dice)? "(.*?)"$/) do |mensaje|
   #Capybara Quering, sin RSpec. Usa MiniTest.
+  #save_and_open_page
   assert page.has_content?(mensaje)
 end
 

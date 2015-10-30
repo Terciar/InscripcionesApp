@@ -1,4 +1,5 @@
-Dado(/^existe un grupo llamado "(.*?)"$/) do |nombre|
+
+Dado(/^(?:que|)existe un grupo llamado "(.*?)"$/) do |nombre|
       @group = Group.create!({
      :nombre => nombre,
      :sexo => 2,
