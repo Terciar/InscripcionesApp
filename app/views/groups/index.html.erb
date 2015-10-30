@@ -23,7 +23,7 @@
     <% @groups.each do |group| %>
       <tr>
         <td><%= group.nombre %></td>
-        <td><%= group.sexo %></td>
+        <td><%= sexo_grupo_a_texto(group.sexo) %></td>
         <td><%= group.initial_age %></td>
         <td><%= group.maximun_age %></td>
         <td><%= group.quota %></td>

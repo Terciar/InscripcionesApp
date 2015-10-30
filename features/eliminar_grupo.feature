@@ -17,19 +17,18 @@ Escenario: se borraron todos los grupos
     Dado que borre todos los grupos
     Entonces veo una lista vacía
 
-@wip
+@wip @to-do
 Escenario: muestra mensaje de confirmación
     Entonces veo el mensaje de confirmación
 
-@wip
+@wip @to-do
 Escenario: eliminación tras confirmación
     Entonces veo el mensaje de confirmación
     Cuando confirmo
     Entonces veo un mensaje "Grupo eliminado correctamente"
 
-@wip
+@wip @to-do
 Escenario: cancelar eliminación
     Entonces veo el mensaje de confirmación
     Cuando cancelo
     Entonces el grupo sigue estando en la lista
-

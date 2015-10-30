@@ -6,8 +6,13 @@
 </p>
 
 <p>
+  <strong>Año:</strong> 
+  <%= @group.year %>
+</p>
+
+<p>
   <strong>Sexo:</strong>
-  <%= @group.sexo %>
+  <%= sexo_grupo_a_texto(@group.sexo) %>
 </p>
 
 <p>
@@ -21,14 +26,10 @@
 </p>
 
 <p>
-  <strong>Edad mínima:</strong>
-  <%= @group.initial_age %>
+  <strong>Edad:</strong> desde 
+  <%= @group.initial_age %> años hasta <%= @group.maximun_age %> años.
 </p>
 
-<p>
-  <strong>Edad máxima:</strong>
-  <%= @group.maximun_age %>
-</p>
 
 <%= link_to 'Editar', edit_group_path(@group), class: "btn btn-default" if current_user.is_admin? %> |
 <%= link_to 'Volver', :back, class: "btn btn-default"   %>

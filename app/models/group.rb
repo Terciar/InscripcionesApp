@@ -19,4 +19,13 @@ validates :nombre, uniqueness: { message: "ese nombre ya está siendo utilizado.
 #  :extended_quota  
 #  :initial_age 
 #  :maximun_age
+
+  def year
+    #Para que salga con el formato de ARG
+    fecha = Date.parse(self.created_at.to_s)
+    fecha.strftime('%Y')
+  end
+
+
+
 end

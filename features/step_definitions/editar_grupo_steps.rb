@@ -1,8 +1,8 @@
 
-Dado(/^(?:que|)existe un grupo llamado "(.*?)"$/) do |nombre|
+Dado(/^(?:que |)existe un grupo llamado "(.*?)"$/) do |nombre|
       @group = Group.create!({
      :nombre => nombre,
-     :sexo => 2,
+     :sexo => 1,
      :quota => 20,
      :extended_quota  => 5,
      :initial_age => 4,
@@ -56,10 +56,6 @@ Entonces(/^veo que la cupo extra cambio, sin afectar al nombre del grupo$/) do
   assert_equal @update_valor, nuevo_valor #MiniTest assert_equal 'expected', 'actual'
 end
 
-Dado(/^que existe un grupo llamado "(.*?)"$/) do |arg1|
-  step %{existe un grupo llamado "Grupo B"}
-end
-
 Cuando(/^yo edito el (\d+)do\. Grupo$/) do |arg1|
   page.find("#groups-list > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(8)").click_on('Editar')
 end
@@ -73,4 +69,3 @@ end
 Entonces(/^veo el mensaje de error "(.*?)"$/) do |mensaje|
   step %{veo el mensaje "error"}
 end
-
