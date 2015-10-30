@@ -17,7 +17,7 @@ users.each do |user|
 end
 
 
-groups = [{:nombre => 'group0 v',:sexo => '1',:quota => '10', :extended_quota => '1', :initial_age => '2', :maximun_age => '4'},
+groups = [{:nombre => 'group0 v',:sexo => '1',:quota => '10', :extended_quota => '1', :initial_age => '3', :maximun_age => '4'},
     	  {:nombre => 'group1 m',:sexo => '2',:quota => '10', :extended_quota => '1', :initial_age => '5', :maximun_age => '6'},
      	  {:nombre => 'group3 mix',:sexo => '3',:quota => '10', :extended_quota => '1', :initial_age => '7', :maximun_age => '8'},
      	  {:nombre => 'group4 v',:sexo => '1',:quota => '10', :extended_quota => '1', :initial_age => '9', :maximun_age => '10'},
