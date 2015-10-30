@@ -48,13 +48,28 @@ Dado(/^existe un grupo llamado "(.*?)", sin cupo extra definido$/) do |nombre_gr
   @group.update_attributes!({ :extended_quota => nil })
 end
 
-Cuando(/^cupo extra por "(.*?)"$/) do |cupo_extra|
- 
-end
-
 Entonces(/^veo que la cupo extra cambio, sin afectar al nombre del grupo$/) do
   step %{que estoy en la pantalla de "administración de grupos"}
   page.has_table?('groups-list') #Que este la tabla
   nuevo_valor = page.find('#groups-list > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(4)').text
   assert_equal @update_valor, nuevo_valor #MiniTest assert_equal 'expected', 'actual'
 end
+
+Dado(/^que existe un grupo llamado "(.*?)"$/) do |arg1|
+  step %{existe un grupo llamado "Grupo B"}
+end
+
+Cuando(/^yo edito el (\d+)do\. Grupo$/) do |arg1|
+  page.find("#groups-list > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(8)").click_on('Editar')
+end
+Cuando(/^modifico el nombre por "(.*?)"$/) do |valor|
+  if valor
+     fill_in "group_nombre", :with => valor
+  end
+  
+end
+
+Entonces(/^veo el mensaje de error "(.*?)"$/) do |mensaje|
+  step %{veo el mensaje "error"}
+end
+

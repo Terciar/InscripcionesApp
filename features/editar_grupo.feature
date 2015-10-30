@@ -60,10 +60,10 @@ Esquema del escenario: problemas con datos
     | Nombre1 | Mixto   | 5           | 7           | 5,1  | 5             |
     | Nombre1 | Mixto   | 5           | 7           | 25   | 5,1           |
 
-@wip
-Escenario: nombre unico
+Escenario: nombre único
   Dado que existe un grupo llamado "Grupo B"
   Y que estoy en la pantalla de "administración de grupos"
   Cuando yo edito el 2do. Grupo
-  Y modifico el nombre "Nenas 4 a 5"} 
-  Entonces me muestra el mensaje de error que "ese nombre ya está siendo utilizado"
+  Y modifico el nombre por "Nenas 4 a 5" 
+  Cuando presiono el botón "Guardar"
+  Entonces veo el mensaje de error "ese nombre ya está siendo utilizado"

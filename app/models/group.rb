@@ -10,6 +10,9 @@ validates :initial_age, :maximun_age, numericality: { only_integer: true, greate
 validates :quota, numericality: { only_integer: true, greater_than: 4, less_than: 26, message: "debe ser entre 5 y 25." }
 validates :extended_quota, numericality: { only_integer: true, greater_than: 0, less_than: 6, message: "debe ser entre 1 y 5." }, :allow_blank => true
 
+#datos unicos.
+validates :nombre, uniqueness: { message: "ese nombre ya está siendo utilizado.", :case_sensitive => false }
+
 #  :nombre 
 #  :sexo
 #  :quota 

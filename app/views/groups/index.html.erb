@@ -12,10 +12,9 @@
     <tr>
       <th headers="Nombre">Nombre</th>
       <th headers="Sexo">Sexo</th>
-      <th headers="Quota">Cupo</th>
-      <th headers="Extended quota">Cupo extendido</th>
       <th headers="Initial age">Edad Minima</th>
       <th headers="Maximun age">Edad Maxima</th>
+      <th headers="Quota">Cupo</th>
       <th colspan="4"></th>
     </tr>
   </thead>
@@ -25,11 +24,10 @@
       <tr>
         <td><%= group.nombre %></td>
         <td><%= group.sexo %></td>
-        <td><%= group.quota %></td>
-        <td><%= group.extended_quota %></td>
         <td><%= group.initial_age %></td>
         <td><%= group.maximun_age %></td>
-         <td><%= link_to ' Colonos', "#", type: "button", class: "btn btn-default fa fa-group" %></td>
+        <td><%= group.quota %></td>
+        <td><%= link_to ' Colonos', "#", type: "button", class: "btn btn-default fa fa-group" %></td>
         <td><%= link_to ' Mostrar', group, type: "button", class: "btn btn-default fa fa-plus" %></td>
         <td><%= link_to ' Editar', edit_group_path(group), class: "btn btn-warning fa fa-pencil", title: 'Editar Grupo', data: { toggle: 'tooltip', placement: 'top', original_title: 'Editar detalles del Grupo' }  %></td>
         <td><%= link_to ' Eliminar', group, class:"btn btn-danger fa fa-trash-o", method: :delete, data: { confirm: "¿Esta seguro que desea borrar este Proyecto? \n" + group.nombre + ""} %></td>

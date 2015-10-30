@@ -1,17 +1,18 @@
 # encoding: utf-8
 Entonces(/^(?:veo un mensaje|veo el mensaje|veo un mensaje que dice )? "(.*?)"$/) do |mensaje|
   #Capybara Quering, sin RSpec. Usa MiniTest.
-  #save_and_open_page
   assert page.has_content?(mensaje)
 end
 
-Dado(/^(?:estoy en la pantalla|estoy en la pantalla donde veo|que estoy en la pantalla de)? "(.*?)"$/) do |pantalla|
+Dado(/^(?:estoy en la pantalla|me encuentro en la pantalla|estoy en la pantalla donde veo|que estoy en la pantalla de)? "(.*?)"$/) do |pantalla|
   case pantalla
   when 'identificación'
     visit('/users/sign_in')
   when 'Inicio'
     visit('/')
   when 'administración de grupos'
+    visit('/admin/groups')
+  when 'ver todos los grupos'
     visit('/admin/groups')
   else
     visit('/¿A donde queres ir?')
