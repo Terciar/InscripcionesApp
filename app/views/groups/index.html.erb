@@ -12,9 +12,10 @@
     <tr>
       <th headers="Nombre">Nombre</th>
       <th headers="Sexo">Sexo</th>
-      <th headers="Initial age">Edad Minima</th>
-      <th headers="Maximun age">Edad Maxima</th>
+      <th headers="Initial age">Edad Mín.</th>
+      <th headers="Maximun age">Edad Máx.</th>
       <th headers="Quota">Cupo</th>
+      <th headers="Quota">Inscriptos</th>
       <th colspan="4"></th>
     </tr>
   </thead>
@@ -27,6 +28,7 @@
         <td><%= group.initial_age %></td>
         <td><%= group.maximun_age %></td>
         <td><%= group.quota %></td>
+        <td>99/<%= group.quota %></td>
         <td><%= link_to ' Colonos', "#", type: "button", class: "btn btn-default fa fa-group" %></td>
         <td><%= link_to ' Mostrar', group, type: "button", class: "btn btn-default fa fa-plus" %></td>
         <td><%= link_to ' Editar', edit_group_path(group), class: "btn btn-warning fa fa-pencil", title: 'Editar Grupo', data: { toggle: 'tooltip', placement: 'top', original_title: 'Editar detalles del Grupo' }  %></td>
@@ -37,4 +39,6 @@
 </table>
 
 <br>
+<%= link_to 'Volver', :back, class: "btn btn-default"   %>
+<%= link_to 'Regresar al Menú', root_path, class: "btn btn-default"   %>
 </div>
