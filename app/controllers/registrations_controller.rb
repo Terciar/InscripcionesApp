@@ -1,10 +1,12 @@
+
 class RegistrationsController < ApplicationController
+  before_action :authenticate_user!, only: [:index, :edit, :update, :destroy]
   before_action :set_registration, only: [:show, :edit, :update, :destroy]
 
   # GET /registrations
   # GET /registrations.json
   def index
-    @registrations = Registration.all
+    @registrations = Registration.all.order('created_at ASC')
   end
 
   # GET /registrations/1

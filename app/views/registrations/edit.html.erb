@@ -1,6 +1,8 @@
-<h1>Editing Registration</h1>
+<h1>Editando Inscripción a Colonia</h1>
 
 <%= render 'form' %>
-
-<%= link_to 'Show', @registration %> |
-<%= link_to 'Back', registrations_path %>
+<br>
+<div class="form-group">
+  <%= link_to 'Ver Inscripción', @registration, title:"Ver datos guardados de la Inscripción.", class: "btn btn-default" %> |
+  <%= link_to 'Volver', :back, class: "btn btn-default" %>
+</div>
