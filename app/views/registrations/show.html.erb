@@ -212,7 +212,7 @@
 
 <p>
   <strong>Posible grupo:</strong>
-  <%= @registration.group %>
+  <%= @registration.group.nombre if @registration.group %>
 </p>
 
 <% if user_signed_in?  %>

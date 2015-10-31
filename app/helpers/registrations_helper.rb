@@ -6,4 +6,6 @@ module RegistrationsHelper
       "No"
     end
   end
+
+
 end

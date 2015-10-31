@@ -21,7 +21,8 @@
   </div>
   <div class="form-group">
     <%= f.label :colonist_birtday, "Fecha de Nacimiento", class: 'control-label' %><br>
-    <%= f.date_select :colonist_birtday, class: 'form-control' %>
+    <% %>
+    <%= f.date_select :colonist_birtday, start_year: 2000, end_year:2013 , class: 'form-control' %>
   </div>
   <div class="form-group">
     <%= f.label :colonist_dni, "DNI", class: 'control-label' %><br>
@@ -73,6 +74,7 @@
   <div class="form-group">
     <%= f.label :colonist_illness_asthma, "Asma", class: 'control-label' %><br>
     <%= f.check_box :colonist_illness_asthma %>
+    <%= label_tag(:colonist_illness_asthma, "SI") %>
   </div>
   <div class="form-group">
     <%= f.label :colonist_illness_allergy, "Alergias", class: 'control-label' %><br>
@@ -81,10 +83,12 @@
   <div class="form-group">
     <%= f.label :colonist_illness_heart_failure, "Insuficiencia cardíaca", class: 'control-label' %><br>
     <%= f.check_box :colonist_illness_heart_failure %>
+    <%= label_tag(:colonist_illness_heart_failure, "SI") %>
   </div>
   <div class="form-group">
     <%= f.label :colonist_illness_diabetes, "Diabetes", class: 'control-label' %><br>
     <%= f.check_box :colonist_illness_diabetes %>
+    <%= label_tag(:colonist_illness_diabetes, "SI") %>
   </div>
   <div class="form-group">
     <%= f.label :colonist_illness_other, "Otra", class: 'control-label' %><br>
@@ -93,16 +97,19 @@
   <div class="form-group">
     <%= f.label :colonist_medical_observation, "¿Actualmente está en observación y/o tratamiento alguno? (físico y/o psicológico)", class: 'control-label' %><br>
     <%= f.check_box :colonist_medical_observation %>
+    <%= label_tag(:colonist_medical_observation, "SI") %>
   </div>
   <div class="form-group">
     <%= f.label :colonist_doctor, "¿El médico de cabecera está informado de la actividad que vas a realizar?", class: 'control-label' %><br>
     <%= f.check_box :colonist_doctor %>
+    <%= label_tag(:colonist_doctor, "SI") %>
   </div>
   <h2> Otros Datos Colono </h2>
   <h3> Natación </h3>  
   <div class="form-group">
     <%= f.label :colonist_know_swim, "¿Concurrió a otra Escuela de Natación anteriormente?", class: 'control-label' %><br>
     <%= f.check_box :colonist_know_swim %>
+    <%= label_tag(:colonist_know_swim, "SI") %>
   </div>
   <div class="form-group">
     <%= f.label :colonist_swim_school, "¿A cuál?", class: 'control-label' %><br>
@@ -129,10 +136,12 @@
   <div class="form-group">
     <%= f.label :father_lives, "¿Vive?", class: 'control-label' %><br>
     <%= f.check_box :father_lives %>
+    <%= label_tag(:father_lives, "SI") %>
   </div>
   <div class="form-group">
     <%= f.label :father_visit, "¿Lo vé habitualmente?", class: 'control-label' %><br>
     <%= f.check_box :father_visit %>
+    <%= label_tag(:father_visit, "SI") %>
   </div>
   <div class="form-group">
     <%= f.label :father_email, "Correo eléctronico", class: 'control-label' %><br>
@@ -157,10 +166,12 @@
   <div class="form-group">
     <%= f.label :mother_lives, "¿Vive?", class: 'control-label' %><br>
     <%= f.check_box :mother_lives %>
+    <%= label_tag(:mother_lives, "SI") %>
   </div>
   <div class="form-group">
     <%= f.label :mother_visit, "¿La vé habitualmente?", class: 'control-label' %><br>
     <%= f.check_box :mother_visit %>
+    <%= label_tag(:mother_visit, "SI") %>
   </div>
   <div class="form-group">
     <%= f.label :mother_email, "Correo eléctronico", class: 'control-label' %><br>
@@ -182,17 +193,27 @@
     <%= f.label :who_register, "¿Quién hace la inscripción? Padre | Madre | Tutor | Familiar", class: 'control-label' %><br>
     <%= f.text_field :who_register, placeholder: "Indique la relación con el menor" , class: 'form-control' %>
   </div>
-  <div class="form-group">
-    <%= f.label :i_attest, "Doy fe que todos los datos proporcionados son correctos; autorizo a mi hijo/a a concurrir a la Escuela de Natación y acepto la reglamentación ya conocida.", class: 'control-label' %><br>
-    <%= f.check_box :i_attest %>
+
+  <div class="panel panel-warning">
+    <div class="panel-body">
+      Doy fe que todos los datos proporcionados son correctos; autorizo a mi hijo/a a concurrir a la Escuela de Natación y acepto la reglamentación ya conocida.
+      <br>
+       <a href="http://buenaonda.terciar.info/reglamento-colonia" class="navbar-btn btn-info btn pull-right" target="blank_">Ver reglamento</a>
+    </div>
+    <div class="panel-footer">
+      <%= f.check_box :i_attest %><%= f.label :i_attest, " SI, doy fe.", class: 'control-label' %>
+    </div>
+  </div>
+
   </div>
   <div class="form-group">
     <%= f.label :group_id, "Grupo (esto no se verá)", class: 'control-label' %><br>
-    <%= f.text_field :group_id, placeholder: "1" , class: 'form-control' %>
+    <%= f.text_field :group_id, class: 'form-control' %>
   </div>
+
   <div class="form-group">
     <div class="actions">
-      <%= f.submit 'Inscribir', class: 'btn btn-primary' %>
+      <%= f.submit 'Guardar', class: 'btn btn-primary' %>
     </div>
   </div>
 <% end %>

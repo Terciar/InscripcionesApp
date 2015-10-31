@@ -29,7 +29,7 @@
   <tbody>
     <% @registrations.each do |registration| %>
       <tr>
-        <td><%= registration.group %></td>
+        <td><%= registration.group.nombre if registration.group %></td>
         <td><%= registration.colonist_name %></td>
         <td><%= registration.colonist_age %></td>
         <td><%= registration.colonist_dni %></td>
