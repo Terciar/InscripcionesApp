@@ -10,9 +10,9 @@
     </li>
     <li class="dropdown"><a class="btn dropdown-toggle" data-toggle="dropdown" href="#"><span class="fa fa-user"></span> Alumnos<span class="caret"></span></a>
         <ul class="dropdown-menu">
-            <li><%= link_to ' Nuevo Alumno', "#", class: 'fa fa-user' %></li>
+            <li><%= link_to ' Nuevo Alumno', new_registration_path, class: 'fa fa-user' %></li>
             <li class="divider"></li>
-            <li><%= link_to ' Listado Alumnos',"#", class: "fa fa-list" %></li>
+            <li><%= link_to ' Listado Alumnos', registrations_path, class: "fa fa-list" %></li>
         </ul>
     </li>
     <li class="dropdown"><a class="btn dropdown-toggle" data-toggle="dropdown" href="#"><span class="fa fa-newspaper-o"></span> Mensajes <span class="caret"></span></a>

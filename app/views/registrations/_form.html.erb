@@ -1,0 +1,198 @@
+<%= form_for(@registration) do |f| %> 
+  <% if @registration.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@registration.errors.count, "error") %> prohibe que esta Inscripción sea guardada:</h2>
+
+      <ul>
+      <% @registration.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <h1> Datos Colono </h1> 
+  <div class="form-group">
+    <%= f.label :colonist_name, "Nombre", class: 'control-label' %><br>
+    <%= f.text_field :colonist_name, placeholder: "Nombre de menor" , class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :colonist_age, "Edad", class: 'control-label' %><br>
+    <%= f.number_field :colonist_age, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :colonist_birtday, "Fecha de Nacimiento", class: 'control-label' %><br>
+    <%= f.date_select :colonist_birtday, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :colonist_dni, "DNI", class: 'control-label' %><br>
+    <%= f.number_field :colonist_dni, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :colonist_address, "Dirección", class: 'control-label' %><br>
+    <%= f.text_field :colonist_address, placeholder: "Dirección donde vive" , class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :colonist_telephone, "Teléfono", class: 'control-label' %><br>
+    <%= f.text_field :colonist_telephone, placeholder: "Teléfono de la casa" , class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :colonist_email, "Correo eléctronico", class: 'control-label' %><br>
+    <%= f.text_field :colonist_email, placeholder: "correo eléctornico" , class: 'form-control' %>
+  </div>
+  <h2> Datos Colono </h2>
+  <div class="form-group">
+    <%= f.label :colonist_school_name, "Escuela", class: 'control-label' %><br>
+    <%= f.text_field :colonist_school_name, placeholder: "Ingrese el nombre del establecimiento educativo al que asiste" , class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :colonist_grade, "Grado/Curso", class: 'control-label' %><br>
+    <%= f.number_field :colonist_grade, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :colonist_school_address, "Dirección", class: 'control-label' %><br>
+    <%= f.text_field :colonist_school_address, placeholder: "Dirección del establecimiento educativo." , class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :colonist_school_phone, "Teléfono", class: 'control-label' %><br>
+    <%= f.text_field :colonist_school_phone, placeholder: "" , class: 'form-control' %>
+  </div>
+  <h2> Salud Colono </h2> 
+  <div class="form-group">
+    <%= f.label :colonist_medical_insurance, "Obra Social/Prepaga", class: 'control-label' %><br>
+    <%= f.text_field :colonist_medical_insurance, placeholder: "Indique que cobertura social tiene el menor" , class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :colonist_trauma, "Traumatismos", class: 'control-label' %><br>
+    <%= f.text_field :colonist_trauma, placeholder: "Indique si tiene o tuvo algun traumatismo." , class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :colonist_surgery, "Operaciones (cirugías)", class: 'control-label' %><br>
+    <%= f.text_field :colonist_surgery, placeholder: "Indique si tuvo alguna cirugía." , class: 'form-control' %>
+  </div>
+  <h3> Enfermedades </h3> 
+  <div class="form-group">
+    <%= f.label :colonist_illness_asthma, "Asma", class: 'control-label' %><br>
+    <%= f.check_box :colonist_illness_asthma %>
+  </div>
+  <div class="form-group">
+    <%= f.label :colonist_illness_allergy, "Alergias", class: 'control-label' %><br>
+    <%= f.text_field :colonist_illness_allergy, placeholder: "Indique a qué es alergico el menor." , class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :colonist_illness_heart_failure, "Insuficiencia cardíaca", class: 'control-label' %><br>
+    <%= f.check_box :colonist_illness_heart_failure %>
+  </div>
+  <div class="form-group">
+    <%= f.label :colonist_illness_diabetes, "Diabetes", class: 'control-label' %><br>
+    <%= f.check_box :colonist_illness_diabetes %>
+  </div>
+  <div class="form-group">
+    <%= f.label :colonist_illness_other, "Otra", class: 'control-label' %><br>
+    <%= f.text_field :colonist_illness_other, placeholder: "Indique otras enfermedades de las que debamos tener conocimiento por el tipo de actividades a realizar" , class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :colonist_medical_observation, "¿Actualmente está en observación y/o tratamiento alguno? (físico y/o psicológico)", class: 'control-label' %><br>
+    <%= f.check_box :colonist_medical_observation %>
+  </div>
+  <div class="form-group">
+    <%= f.label :colonist_doctor, "¿El médico de cabecera está informado de la actividad que vas a realizar?", class: 'control-label' %><br>
+    <%= f.check_box :colonist_doctor %>
+  </div>
+  <h2> Otros Datos Colono </h2>
+  <h3> Natación </h3>  
+  <div class="form-group">
+    <%= f.label :colonist_know_swim, "¿Concurrió a otra Escuela de Natación anteriormente?", class: 'control-label' %><br>
+    <%= f.check_box :colonist_know_swim %>
+  </div>
+  <div class="form-group">
+    <%= f.label :colonist_swim_school, "¿A cuál?", class: 'control-label' %><br>
+    <%= f.text_field :colonist_swim_school, placeholder: "Nombre de la escuela o club" , class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :colonist_swim_leave_reasons, "¿Por qué dejó de concurrir?", class: 'control-label' %><br>
+    <%= f.text_field :colonist_swim_leave_reasons, placeholder: "" , class: 'form-control' %>
+  </div>
+  <h1> Datos Tutores </h1> 
+  <div class="form-group">
+    <%= f.label :parents_relation, "Estado civil de los padres", class: 'control-label' %><br>
+    (Conviven | Separados | Viudos)
+    <%= f.text_field :parents_relation, placeholder: "Seleccione uno" , class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :father_name, "Apellido y Nombre del Padre", class: 'control-label' %><br>
+    <%= f.text_field :father_name, placeholder: "Indique el nombre y apellido del padre." , class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :father_age, "Edad", class: 'control-label' %><br>
+    <%= f.number_field :father_age %>
+  </div>
+  <div class="form-group">
+    <%= f.label :father_lives, "¿Vive?", class: 'control-label' %><br>
+    <%= f.check_box :father_lives %>
+  </div>
+  <div class="form-group">
+    <%= f.label :father_visit, "¿Lo vé habitualmente?", class: 'control-label' %><br>
+    <%= f.check_box :father_visit %>
+  </div>
+  <div class="form-group">
+    <%= f.label :father_email, "Correo eléctronico", class: 'control-label' %><br>
+    <%= f.text_field :father_email, placeholder: "correopadre@terciar.info" , class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :father_profession, "Profesión", class: 'control-label' %><br>
+    <%= f.text_field :father_profession, placeholder: "Indique a que se dedica" , class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :father_work_phone, "Teléfono laboral", class: 'control-label' %><br>
+    <%= f.text_field :father_work_phone, placeholder: "Numero para llamarlo solo en caso de ser necesario" , class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :mother_name, "Apellido y Nombre de la Madre", class: 'control-label' %><br>
+    <%= f.text_field :mother_name, placeholder: "correomadre@terciar.info" , class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :mother_age, "Edad", class: 'control-label' %><br>
+    <%= f.number_field :mother_age %>
+  </div>
+  <div class="form-group">
+    <%= f.label :mother_lives, "¿Vive?", class: 'control-label' %><br>
+    <%= f.check_box :mother_lives %>
+  </div>
+  <div class="form-group">
+    <%= f.label :mother_visit, "¿La vé habitualmente?", class: 'control-label' %><br>
+    <%= f.check_box :mother_visit %>
+  </div>
+  <div class="form-group">
+    <%= f.label :mother_email, "Correo eléctronico", class: 'control-label' %><br>
+    <%= f.text_field :mother_email, placeholder: "correomadre@terciar.info" , class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :mother_profession, "Profesión", class: 'control-label' %><br>
+    <%= f.text_field :mother_profession, placeholder: "Indique a que se dedica" , class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :mother_work_phone, "Teléfono laboral", class: 'control-label' %><br>
+    <%= f.text_field :mother_work_phone, placeholder: "Ingrese un teléfono para comunicarnos en caso de ser necesario" , class: 'form-control' %>
+  </div>
+   <div class="form-group">
+    <%= f.label :how_know_us, "¿Cómo se enteró de \"Buena Onda\"?", class: 'control-label' %><br>
+    <%= f.text_field :how_know_us, placeholder: "" , class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :who_register, "¿Quién hace la inscripción? Padre | Madre | Tutor | Familiar", class: 'control-label' %><br>
+    <%= f.text_field :who_register, placeholder: "Indique la relación con el menor" , class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :i_attest, "Doy fe que todos los datos proporcionados son correctos; autorizo a mi hijo/a a concurrir a la Escuela de Natación y acepto la reglamentación ya conocida.", class: 'control-label' %><br>
+    <%= f.check_box :i_attest %>
+  </div>
+  <div class="form-group">
+    <%= f.label :group_id, "Grupo (esto no se verá)", class: 'control-label' %><br>
+    <%= f.text_field :group_id, placeholder: "1" , class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <div class="actions">
+      <%= f.submit 'Inscribir', class: 'btn btn-primary' %>
+    </div>
+  </div>
+<% end %>

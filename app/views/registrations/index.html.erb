@@ -1,0 +1,111 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Registrations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Colonist name</th>
+      <th>Colonist age</th>
+      <th>Colonist birtday</th>
+      <th>Colonist dni</th>
+      <th>Colonist address</th>
+      <th>Colonist telephone</th>
+      <th>Colonist email</th>
+      <th>Colonist school name</th>
+      <th>Colonist grade</th>
+      <th>Colonist school address</th>
+      <th>Colonist school phone</th>
+      <th>Colonist medical insurance</th>
+      <th>Colonist trauma</th>
+      <th>Colonist surgery</th>
+      <th>Colonist illness asthma</th>
+      <th>Colonist illness allergy</th>
+      <th>Colonist illness heart failure</th>
+      <th>Colonist illness diabetes</th>
+      <th>Colonist illness other</th>
+      <th>Colonist medical observation</th>
+      <th>Colonist doctor</th>
+      <th>Colonist know swim</th>
+      <th>Colonist swim school</th>
+      <th>Colonist swim leave reasons</th>
+      <th>How know us</th>
+      <th>Parents relation</th>
+      <th>Father name</th>
+      <th>Father age</th>
+      <th>Father lives</th>
+      <th>Father visit</th>
+      <th>Father address</th>
+      <th>Father profession</th>
+      <th>Father work phone</th>
+      <th>Mother name</th>
+      <th>Mother age</th>
+      <th>Mother lives</th>
+      <th>Mother visit</th>
+      <th>Mother address</th>
+      <th>Mother profession</th>
+      <th>Mother work phone</th>
+      <th>Who register</th>
+      <th>I attest</th>
+      <th>Group</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @registrations.each do |registration| %>
+      <tr>
+        <td><%= registration.colonist_name %></td>
+        <td><%= registration.colonist_age %></td>
+        <td><%= registration.colonist_birtday %></td>
+        <td><%= registration.colonist_dni %></td>
+        <td><%= registration.colonist_address %></td>
+        <td><%= registration.colonist_telephone %></td>
+        <td><%= registration.colonist_email %></td>
+        <td><%= registration.colonist_school_name %></td>
+        <td><%= registration.colonist_grade %></td>
+        <td><%= registration.colonist_school_address %></td>
+        <td><%= registration.colonist_school_phone %></td>
+        <td><%= registration.colonist_medical_insurance %></td>
+        <td><%= registration.colonist_trauma %></td>
+        <td><%= registration.colonist_surgery %></td>
+        <td><%= registration.colonist_illness_asthma %></td>
+        <td><%= registration.colonist_illness_allergy %></td>
+        <td><%= registration.colonist_illness_heart_failure %></td>
+        <td><%= registration.colonist_illness_diabetes %></td>
+        <td><%= registration.colonist_illness_other %></td>
+        <td><%= registration.colonist_medical_observation %></td>
+        <td><%= registration.colonist_doctor %></td>
+        <td><%= registration.colonist_know_swim %></td>
+        <td><%= registration.colonist_swim_school %></td>
+        <td><%= registration.colonist_swim_leave_reasons %></td>
+        <td><%= registration.how_know_us %></td>
+        <td><%= registration.parents_relation %></td>
+        <td><%= registration.father_name %></td>
+        <td><%= registration.father_age %></td>
+        <td><%= registration.father_lives %></td>
+        <td><%= registration.father_visit %></td>
+        <td><%= registration.father_address %></td>
+        <td><%= registration.father_profession %></td>
+        <td><%= registration.father_work_phone %></td>
+        <td><%= registration.mother_name %></td>
+        <td><%= registration.mother_age %></td>
+        <td><%= registration.mother_lives %></td>
+        <td><%= registration.mother_visit %></td>
+        <td><%= registration.mother_address %></td>
+        <td><%= registration.mother_profession %></td>
+        <td><%= registration.mother_work_phone %></td>
+        <td><%= registration.who_register %></td>
+        <td><%= registration.i_attest %></td>
+        <td><%= registration.group %></td>
+        <td><%= link_to 'Show', registration %></td>
+        <td><%= link_to 'Edit', edit_registration_path(registration) %></td>
+        <td><%= link_to 'Destroy', registration, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Registration', new_registration_path %>
