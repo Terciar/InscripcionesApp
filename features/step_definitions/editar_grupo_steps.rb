@@ -57,7 +57,7 @@ Entonces(/^veo que la cupo extra cambio, sin afectar al nombre del grupo$/) do
 end
 
 Cuando(/^yo edito el (\d+)do\. Grupo$/) do |arg1|
-  page.find("#groups-list > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(8)").click_on('Editar')
+  page.find("#groups-list > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(9)").click_on('Editar')
 end
 Cuando(/^modifico el nombre por "(.*?)"$/) do |valor|
   if valor
