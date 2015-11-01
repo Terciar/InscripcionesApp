@@ -2,7 +2,7 @@
   <div class="form-group">
 <p id="notice"><%= notice %></p>
  
-<h1>Lista de Inscriptos</h1>
+<h1>Lista de Colonos</h1>
   <% if user_signed_in?  %>
    <%= link_to ' Nuevo Colono', new_registration_path, class: "btn btn-primary fa fa-group pull-right" if current_user.is_admin? %>
   <% end %>
