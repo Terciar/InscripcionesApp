@@ -6,7 +6,7 @@ class RegistrationsController < ApplicationController
   # GET /registrations
   # GET /registrations.json
   def index
-    @registrations = Registration.all.order('created_at ASC')
+    @registrations = Registration.all.order('created_at DESC')
   end
 
   # GET /registrations/1
@@ -77,7 +77,7 @@ class RegistrationsController < ApplicationController
 
    def sortear_grupo(age, gender)
     # Define el gurpo al que debe pertenecer el colono en base a los grupos creados.
-    # logger.debug ("ACA!!!!!!!!!!!!!Edad: #{age.inspect}")
+    logger.debug ("ACA!!!!!!!!!!!!!Edad: #{age}, Genero: #{gender}")
 
     ### Grupos Temporada.
     inicio_temporada = Date.new(2015,10,01)
@@ -88,7 +88,11 @@ class RegistrationsController < ApplicationController
     grupo = grupos.each do |grupo|
       #initial_age: 11, maximun_age: 12
       #14.between?(10,20)
-      break grupo.id if age.between?(grupo.initial_age, grupo.maximun_age) 
+      if age.between?(grupo.initial_age, grupo.maximun_age) && grupo.sexo == gender
+        break grupo.id 
+      elsif age.between?(grupo.initial_age, grupo.maximun_age) && grupo.sexo == 3
+        break grupo.id 
+      end
       #logger.debug ("Grupo: #{grupo.inspect}")
       grupo = nil
     end
