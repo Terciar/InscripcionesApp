@@ -206,10 +206,12 @@
   </div>
 
   </div>
-  <div class="form-group">
-    <%= f.label :group_id, "Grupo (esto no se verá)", class: 'control-label' %><br>
-    <%= f.text_field :group_id, class: 'form-control' %>
-  </div>
+  <% if user_signed_in?  %>
+    <p>Opción de Administrador: puede mover de grupo al inscripto.
+    <% groups_array = grupos_temporada %>
+    <%= f.select(:group_id,  groups_array.map { |v| [v.nombre, v.id] }, {prompt: 'Seleccione un Grupo', selected: @registration.group_id}, class: "form-control", id: "group_select" )  %>
+  <% end %>
+ 
 
   <div class="form-group">
     <div class="actions">
