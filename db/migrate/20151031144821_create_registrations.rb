@@ -4,6 +4,7 @@ class CreateRegistrations < ActiveRecord::Migration
       t.string :colonist_name
       t.integer :colonist_age
       t.date :colonist_birtday
+      t.integer  :colonist_gender
       t.integer :colonist_dni
       t.string :colonist_address
       t.string :colonist_telephone

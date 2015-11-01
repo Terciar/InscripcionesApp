@@ -7,6 +7,14 @@ module RegistrationsHelper
     end
   end
 
+  def gender_to_text(gender)
+    if 1
+      "Varon"
+    else
+      "Mujer"
+    end
+  end
+
   ### Grupos Temporada.
   def grupos_temporada
     inicio_temporada = Date.new(2015,10,01)
