@@ -8,7 +8,7 @@ module RegistrationsHelper
   end
 
   def gender_to_text(gender)
-    if 1
+    if gender == 1
       "Varon"
     else
       "Mujer"
