@@ -3,6 +3,8 @@ class RegistrationsController < ApplicationController
   before_action :authenticate_user!, only: [:index, :edit, :update, :destroy]
   before_action :set_registration, only: [:show, :edit, :update, :destroy]
 
+  #layout "sin_menu", :only => [:new] 
+ 
   # GET /registrations
   # GET /registrations.json
   def index
@@ -12,11 +14,13 @@ class RegistrationsController < ApplicationController
   # GET /registrations/1
   # GET /registrations/1.json
   def show
+    render layout: "sin_menu" unless user_signed_in? 
   end
 
   # GET /registrations/new
   def new
     @registration = Registration.new
+    render layout: "sin_menu" unless user_signed_in? 
   end
 
   # GET /registrations/1/edit
