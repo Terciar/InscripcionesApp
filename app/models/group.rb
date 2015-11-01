@@ -26,6 +26,9 @@ validates :nombre, uniqueness: { message: "ese nombre ya está siendo utilizado.
     fecha.strftime('%Y')
   end
 
+  def inscriptos
+  	Registration.where(group_id: self).count
+  end
 
 
 end
