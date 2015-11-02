@@ -19,6 +19,7 @@ authenticated do
   get 'pages/index' => 'pages#index'
   get 'admin/groups' => 'groups#index'
   get 'registrations/:id/change_group' => 'registrations#change_group', as: :change_group_registration
+  get 'admin/groups/:id/lista_colonos' => 'groups#lista_colonos', as: :lista_colonos_groups
 end
 
 root to: "pages#index"
