@@ -24,13 +24,17 @@
     <% %>
     <%= f.date_select :colonist_birtday, start_year: 2000, end_year:2013 , class: 'form-control' %>
   </div>
-   <div class="form-group">
+   <div class="btn-group" data-toggle="buttons">
     <%= f.label :colonist_gender, "Genero", class: 'control-label' %><br>
-    <%= f.radio_button :colonist_gender, '1'%>
-    <%= f.label :colonist_gender, "Varon"%>
-    <%= f.radio_button :colonist_gender, '2'%>
-    <%= f.label :colonist_gender, "Mujer"%>
-  </div>
+    
+   <label class='<%= gender_active(@registration.colonist_gender, 1) %>' >Varon
+      <%= f.radio_button :colonist_gender, '1'%>  
+   </label>
+   <label class='<%= gender_active(@registration.colonist_gender, 2) %>' >Mujer
+      <%= f.radio_button :colonist_gender, '2'%>
+   </label>
+   </div>
+
   <div class="form-group">
     <%= f.label :colonist_dni, "DNI", class: 'control-label' %><br>
     <%= f.number_field :colonist_dni, class: 'form-control' %>

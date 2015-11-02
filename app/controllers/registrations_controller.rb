@@ -1,7 +1,7 @@
 
 class RegistrationsController < ApplicationController
   before_action :authenticate_user!, only: [:index, :edit, :update, :destroy]
-  before_action :set_registration, only: [:show, :edit, :update, :destroy]
+  before_action :set_registration, only: [:show, :edit, :update, :destroy, :change_group]
 
   #layout "sin_menu", :only => [:new] 
  
@@ -66,6 +66,10 @@ class RegistrationsController < ApplicationController
       format.html { redirect_to registrations_url, notice: 'Se elimino correctamente el registro.' }
       format.json { head :no_content }
     end
+  end
+
+  # GET /registrations/1/change_group
+  def change_group
   end
 
   private

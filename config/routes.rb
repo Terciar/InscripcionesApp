@@ -18,6 +18,7 @@ get 'pages/contact'
 authenticated do
   get 'pages/index' => 'pages#index'
   get 'admin/groups' => 'groups#index'
+  get 'registrations/:id/change_group' => 'registrations#change_group', as: :change_group_registration
 end
 
 root to: "pages#index"
