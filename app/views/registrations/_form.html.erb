@@ -117,13 +117,16 @@
   </div>
   <h2> Otros Datos Colono </h2>
   <h3> Natación </h3>  
-  <div class="form-group">
-    <%= f.label :colonist_know_swim, "¿Concurrió a otra Escuela de Natación anteriormente?", class: 'control-label' %><br>
-    <%= f.check_box :colonist_know_swim %>
-    <%= label_tag(:colonist_know_swim, "SI") %>
+  <div class="form-inline">
+    <%= f.label :colonist_know_swim, "¿Sabe Nadar?", class: 'control-label' %><br>
+    <%= label :colonist_know_swim, "SI", class: 'radio-inline' %>
+    <%= f.radio_button :colonist_know_swim, '1', class: 'form-control' %>
+    <%= label :colonist_know_swim, "NO", class: 'radio-inline' %>
+    <%= f.radio_button :colonist_know_swim, '2', class: 'form-control' %>
   </div>
+
   <div class="form-group">
-    <%= f.label :colonist_swim_school, "¿A cuál?", class: 'control-label' %><br>
+    <%= f.label :colonist_swim_school, "¿Concurrió a otra Escuela de Natación anteriormente? ¿A cuál?", class: 'control-label' %><br>
     <%= f.text_field :colonist_swim_school, placeholder: "Nombre de la escuela o club" , class: 'form-control' %>
   </div>
   <div class="form-group">

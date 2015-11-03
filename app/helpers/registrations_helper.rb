@@ -32,8 +32,8 @@ module RegistrationsHelper
     puts("ACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA Estus:#{colono.status}")
     case colono.status
       when 1            
-          @content = link_to('', confirm_registration_path(colono.id, :admission => 'aprobado' ), :class => 'btn btn-success btn-xs btn fa fa-check active', :method => :post, data: { confirm: "Esta seguro que desea APROBAR el colono: #{colono.colonist_name} ?"})
-          @content += link_to('', confirm_registration_path(colono.id, :admission => 'rechazado' ), :class => 'btn btn-danger btn-xs btn fa fa-ban active', :method => :post, data: { confirm: "Esta seguro que desea RECHAZAR el colono: #{colono.colonist_name} ?"})
+          @content = link_to('', confirm_registration_path(colono.id, :admission => 'aprobado' ), :class => 'btn btn-success btn-xs btn fa fa-check active', :method => :post, data: { confirm: "Esta seguro que desea confirmar y APROBAR el colono: #{colono.colonist_name} ?"})
+          @content += link_to('', confirm_registration_path(colono.id, :admission => 'rechazado' ), :class => 'btn btn-danger btn-xs btn fa fa-ban active', :method => :post, data: { confirm: "Esta seguro que desea RECHAZAR la inscripción de: #{colono.colonist_name} ?"})
       when 2
         content_tag(:p, "Aceptado", class: ["label label-success", "fa fa-check-square-o"])
       when 3
