@@ -26,10 +26,8 @@ module RegistrationsHelper
         "btn btn-primary fa fa-male"
     end
   end
-
   
   def confirmar_colono(colono)
-    puts("ACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA Estus:#{colono.status}")
     case colono.status
       when 1            
           @content = link_to('', confirm_registration_path(colono.id, :admission => 'aprobado' ), :class => 'btn btn-success btn-xs btn fa fa-check active', :method => :post, data: { confirm: "Esta seguro que desea confirmar y APROBAR el colono: #{colono.colonist_name} ?"})
@@ -41,12 +39,10 @@ module RegistrationsHelper
     end 
   end
 
-
   ### Grupos Temporada.
   def grupos_temporada
     inicio_temporada = Date.new(2015,10,01)
     fin_temporada = Date.new(2016,03,31)
     grupos = Group.where(created_at: inicio_temporada..fin_temporada)
-    #logger.debug ("ACA!!!!!!!!!!!!!grupos: #{grupos.inspect}")
   end
 end

@@ -99,10 +99,11 @@ class RegistrationsController < ApplicationController
     #logger.debug ("ACA!!!!!!!!!!!!!Edad: #{age}, Genero: #{gender}")
 
     ### Grupos Temporada.
-    inicio_temporada = Date.new(2015,10,01)
-    fin_temporada = Date.new(2016,03,31)
-    grupos = Group.where(created_at: inicio_temporada..fin_temporada)
+    #inicio_temporada = Date.new(2015,10,01)
+    #fin_temporada = Date.new(2016,03,31)
+    #grupos = Group.where(created_at: inicio_temporada..fin_temporada)
     #logger.debug ("ACA!!!!!!!!!!!!!grupos: #{grupos.inspect}")
+    grupos = view_context.grupos_temporada
 
     grupo = grupos.each do |grupo|
       #initial_age: 11, maximun_age: 12
