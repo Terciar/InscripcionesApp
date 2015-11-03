@@ -44,6 +44,7 @@ class CreateRegistrations < ActiveRecord::Migration
       t.string :mother_work_phone
       t.string :who_register
       t.boolean :i_attest
+      t.integer :status, default: 1, null: false #1 pendiente, 2 aprobado, 3 rechazado 
       t.references :group, index: true, foreign_key: true
 
       t.timestamps null: false

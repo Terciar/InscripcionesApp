@@ -68,9 +68,10 @@ ActiveRecord::Schema.define(version: 20151031144821) do
     t.string   "mother_work_phone"
     t.string   "who_register"
     t.boolean  "i_attest"
+    t.integer  "status",                         default: 1, null: false
     t.integer  "group_id"
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
   end
 
   add_index "registrations", ["group_id"], name: "index_registrations_on_group_id"

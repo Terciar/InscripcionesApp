@@ -42,6 +42,7 @@
         <td><%= registration.mother_name %></td>
         <td><%= registration.mother_work_phone %></td>
         <td><%= registration.who_register %></td>
+        <td><%= confirmar_colono(registration) %></td>
         <td><%= link_to ' Mostrar', registration, type: "button", class: "btn btn-default fa fa-plus" %></td>
         <td><%= link_to ' Mover', change_group_registration_path(registration), type: "button", class: "btn btn-default fa fa-exchange" %></td>
         <td><%= link_to ' Editar', edit_registration_path(registration), class: "btn btn-warning fa fa-pencil", title: 'Editar Grupo', data: { toggle: 'tooltip', placement: 'top', original_title: 'Editar detalles del alumno' }  %></td>
