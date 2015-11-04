@@ -1,0 +1,20 @@
+Tiene una Nueva novedad en su Proyecto: <%= @project.name %>
+===============================================
+
+Estimado <%= @customer.nombre %>,
+por este medio le informamos que hay una nueva novedad en su Proyecto "<%= @project.name %>"
+y puede consultarla desde nuestra aplicación exclusiva para clientes del estudio.
+
+Le recordamos que su nombre de usuario es: <%= @customer.email %>.
+
+Una vez visto el mensaje puede marcarlo como leído, presionando el botón correspondiente.
+
+Para ver la novedad, siga este enlace:
+<%= @url %>.
+
+<% if Rails.env.development? %>
+  <%= @url_dev %>.
+  Titulo: <%= @notification.title %>
+  Mensaje: <%= @notification.message %>
+<% end %>
+Gracias por confiar en nuestro estudio, que tenga un buen día.

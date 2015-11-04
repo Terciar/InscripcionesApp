@@ -225,3 +225,7 @@
   <%= link_to 'Lista Inscriptos', registrations_path, class: "btn btn-default" if current_user.is_admin? %>
 <% end %>
   <%= link_to 'Volver', :back, class: "btn btn-default"   %>
+
+  <br>
+<br>
+<% breadcrumb :registration, @registration %>
