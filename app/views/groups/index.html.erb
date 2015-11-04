@@ -1,6 +1,5 @@
 <div class="container-fluid">
   <div class="form-group">
-  <p id="notice"><%= notice %></p>
   <h1>Grupos</h1>   
   <% if user_signed_in?  %>
    <%= link_to ' Nuevo grupo', new_group_path, class: "btn btn-primary fa fa-group pull-right" if current_user.is_admin? %>

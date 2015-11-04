@@ -17,7 +17,7 @@
   </div>
   <div class="form-group">
     <%= f.label :colonist_age, "Edad", class: 'control-label' %><br>
-    <%= f.number_field :colonist_age, class: 'form-control' %>
+    <%= f.number_field :colonist_age, in: 2..15, class: 'form-control' %>
   </div>
   <div class="form-group">
     <%= f.label :colonist_birtday, "Fecha de Nacimiento", class: 'control-label' %><br>
@@ -25,19 +25,18 @@
     <%= f.date_select :colonist_birtday, start_year: 2000, end_year:2013 , class: 'form-control' %>
   </div>
    <div class="btn-group" data-toggle="buttons">
-    <%= f.label :colonist_gender, "Genero", class: 'control-label' %><br>
-    
-   <label class='<%= gender_active(@registration.colonist_gender, 1) %>' >Varon
+    <p>Genero<br>    
+   <label class='<%= gender_active(@registration.colonist_gender, 1) %>'> Varon
       <%= f.radio_button :colonist_gender, '1'%>  
    </label>
-   <label class='<%= gender_active(@registration.colonist_gender, 2) %>' >Mujer
+   <label class='<%= gender_active(@registration.colonist_gender, 2) %>'> Mujer
       <%= f.radio_button :colonist_gender, '2'%>
    </label>
    </div>
 
   <div class="form-group">
     <%= f.label :colonist_dni, "DNI", class: 'control-label' %><br>
-    <%= f.number_field :colonist_dni, class: 'form-control' %>
+    <%= f.number_field :colonist_dni, in: 44_000_000..99_000_000, class: 'form-control' %>
   </div>
   <div class="form-group">
     <%= f.label :colonist_address, "Dirección", class: 'control-label' %><br>
@@ -49,9 +48,11 @@
   </div>
   <div class="form-group">
     <%= f.label :colonist_email, "Correo eléctronico", class: 'control-label' %><br>
-    <%= f.text_field :colonist_email, placeholder: "correo eléctornico" , class: 'form-control' %>
+    <% #f.text_field :colonist_email, placeholder: "correo eléctornico" , class: 'form-control' %>
+    <%= f.email_field :colonist_email, class: 'form-control' %>
+  
   </div>
-  <h2> Datos Colono </h2>
+  <h2> Escuela del Colono </h2>
   <div class="form-group">
     <%= f.label :colonist_school_name, "Escuela", class: 'control-label' %><br>
     <%= f.text_field :colonist_school_name, placeholder: "Ingrese el nombre del establecimiento educativo al que asiste" , class: 'form-control' %>
@@ -83,42 +84,43 @@
   </div>
   <h3> Enfermedades </h3> 
   <div class="form-group">
-    <%= f.label :colonist_illness_asthma, "Asma", class: 'control-label' %><br>
-    <%= f.check_box :colonist_illness_asthma %>
-    <%= label_tag(:colonist_illness_asthma, "SI") %>
+    <p>ASMA:
+     <%= f.check_box :colonist_illness_asthma, {}, true, false %>
+     <%= f.label :colonist_illness_asthma, "Si" , class: 'control-label' %>
+    </p>
+  </div>
+  <div class="form-group">
+    <p>Insuficiencia cardíaca:
+    <%= f.check_box :colonist_illness_heart_failure, {}, true, false %>
+    <%= f.label :colonist_illness_heart_failure, "SI", class: 'control-label' %>
+  </div>
+  <div class="form-group">
+    <p> Diabetes:
+    <%= f.check_box :colonist_illness_diabetes, {}, true, false %>
+    <%= f.label :colonist_illness_diabetes, "SI", class: 'control-label' %>
   </div>
   <div class="form-group">
     <%= f.label :colonist_illness_allergy, "Alergias", class: 'control-label' %><br>
     <%= f.text_field :colonist_illness_allergy, placeholder: "Indique a qué es alergico el menor." , class: 'form-control' %>
   </div>
   <div class="form-group">
-    <%= f.label :colonist_illness_heart_failure, "Insuficiencia cardíaca", class: 'control-label' %><br>
-    <%= f.check_box :colonist_illness_heart_failure %>
-    <%= label_tag(:colonist_illness_heart_failure, "SI") %>
-  </div>
-  <div class="form-group">
-    <%= f.label :colonist_illness_diabetes, "Diabetes", class: 'control-label' %><br>
-    <%= f.check_box :colonist_illness_diabetes %>
-    <%= label_tag(:colonist_illness_diabetes, "SI") %>
-  </div>
-  <div class="form-group">
     <%= f.label :colonist_illness_other, "Otra", class: 'control-label' %><br>
     <%= f.text_field :colonist_illness_other, placeholder: "Indique otras enfermedades de las que debamos tener conocimiento por el tipo de actividades a realizar" , class: 'form-control' %>
   </div>
   <div class="form-group">
-    <%= f.label :colonist_medical_observation, "¿Actualmente está en observación y/o tratamiento alguno? (físico y/o psicológico)", class: 'control-label' %><br>
-    <%= f.check_box :colonist_medical_observation %>
-    <%= label_tag(:colonist_medical_observation, "SI") %>
+    <p>¿Actualmente está en observación y/o tratamiento alguno? (físico y/o psicológico)<br>
+    <%= f.check_box :colonist_medical_observation, {}, true, false %>
+    <%= f.label :colonist_medical_observation, "SI", class: 'control-label' %>
   </div>
   <div class="form-group">
-    <%= f.label :colonist_doctor, "¿El médico de cabecera está informado de la actividad que vas a realizar?", class: 'control-label' %><br>
-    <%= f.check_box :colonist_doctor %>
-    <%= label_tag(:colonist_doctor, "SI") %>
+    <p>¿El médico de cabecera está informado de la actividad que vas a realizar?<br>
+    <%= f.check_box :colonist_doctor, {}, true, false %>
+    <%= f.label :colonist_doctor, "SI", class: 'control-label' %>
   </div>
   <h2> Otros Datos Colono </h2>
   <h3> Natación </h3>  
   <div class="form-inline">
-    <%= f.label :colonist_know_swim, "¿Sabe Nadar?", class: 'control-label' %><br>
+    <p>¿Sabe Nadar?<br>
     <%= label :colonist_know_swim, "SI", class: 'radio-inline' %>
     <%= f.radio_button :colonist_know_swim, '1', class: 'form-control' %>
     <%= label :colonist_know_swim, "NO", class: 'radio-inline' %>
@@ -136,8 +138,8 @@
   <h1> Datos Tutores </h1> 
   <div class="form-group">
     <%= f.label :parents_relation, "Estado civil de los padres", class: 'control-label' %><br>
-    (Conviven | Separados | Viudos)
-    <%= f.text_field :parents_relation, placeholder: "Seleccione uno" , class: 'form-control' %>
+    <%= f.select(:parents_relation,  estado_civil_array, {prompt: 'Seleccione una opción', selected: @registration.parents_relation}, class: "form-control", id: "parents_relation_select" )  %>
+
   </div>
   <div class="form-group">
     <%= f.label :father_name, "Apellido y Nombre del Padre", class: 'control-label' %><br>
@@ -145,21 +147,24 @@
   </div>
   <div class="form-group">
     <%= f.label :father_age, "Edad", class: 'control-label' %><br>
-    <%= f.number_field :father_age %>
+    <%= f.number_field :father_age, in: 14..99 %>
   </div>
   <div class="form-group">
-    <%= f.label :father_lives, "¿Vive?", class: 'control-label' %><br>
-    <%= f.check_box :father_lives %>
-    <%= label_tag(:father_lives, "SI") %>
+    <p>¿Vive?
+    <%= f.check_box :father_lives, {}, true, false %>
+    <%= f.label :father_lives, "SI", class: 'control-label' %>
   </div>
   <div class="form-group">
-    <%= f.label :father_visit, "¿Lo vé habitualmente?", class: 'control-label' %><br>
-    <%= f.check_box :father_visit %>
-    <%= label_tag(:father_visit, "SI") %>
+    <p>¿Lo vé habitualmente?<br>
+    <%= f.check_box :father_visit, {}, true, false %>
+    <%= f.label :father_visit, "SI", class: 'control-label' %>
   </div>
   <div class="form-group">
     <%= f.label :father_email, "Correo eléctronico", class: 'control-label' %><br>
-    <%= f.text_field :father_email, placeholder: "correopadre@terciar.info" , class: 'form-control' %>
+    <div class="input-group margin-bottom-sm">
+      <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+      <%= f.email_field :father_email, placeholder: "ingrese un correo electronico" , class: 'form-control' %>
+    </div>
   </div>
   <div class="form-group">
     <%= f.label :father_profession, "Profesión", class: 'control-label' %><br>
@@ -175,21 +180,24 @@
   </div>
   <div class="form-group">
     <%= f.label :mother_age, "Edad", class: 'control-label' %><br>
-    <%= f.number_field :mother_age %>
+    <%= f.number_field :mother_age, in: 14..99 %>
   </div>
   <div class="form-group">
-    <%= f.label :mother_lives, "¿Vive?", class: 'control-label' %><br>
-    <%= f.check_box :mother_lives %>
-    <%= label_tag(:mother_lives, "SI") %>
+    ¿Vive?<br>
+    <%= f.check_box :mother_lives, {}, true, false %>
+    <%= f.label :mother_lives, "SI", class: 'control-label' %>
   </div>
   <div class="form-group">
-    <%= f.label :mother_visit, "¿La vé habitualmente?", class: 'control-label' %><br>
-    <%= f.check_box :mother_visit %>
-    <%= label_tag(:mother_visit, "SI") %>
+    ¿La vé habitualmente?<br>
+    <%= f.check_box :mother_visit, {}, true, false %>
+    <%= f.label :mother_visit, "SI", class: 'control-label' %>
   </div>
-  <div class="form-group">
+    <div class="form-group">
     <%= f.label :mother_email, "Correo eléctronico", class: 'control-label' %><br>
-    <%= f.text_field :mother_email, placeholder: "correomadre@terciar.info" , class: 'form-control' %>
+    <div class="input-group margin-bottom-sm">
+      <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+      <%= f.email_field :mother_email, placeholder: "ingrese un correo electronico" , class: 'form-control' %>
+    </div>
   </div>
   <div class="form-group">
     <%= f.label :mother_profession, "Profesión", class: 'control-label' %><br>
@@ -205,7 +213,7 @@
   </div>
   <div class="form-group">
     <%= f.label :who_register, "¿Quién hace la inscripción? Indique la relación con el menor", class: 'control-label' %><br>
-    <%= f.select(:who_register, [['Padre',1], ['Madre',2], ['Tutor',3], ['Familiar',4], ['Otro',5]], {prompt: 'Seleccione una opción', selected: @registration.who_register}, class: "form-control", id: "who_select" )  %>
+    <%= f.select(:who_register, quien_registra_array, {prompt: 'Seleccione una opción', selected: @registration.who_register}, class: "form-control", id: "registration_who_register" )  %>
   </div>
 
   <div class="panel panel-warning">
@@ -215,7 +223,7 @@
        <a href="http://buenaonda.terciar.info/reglamento-colonia" class="navbar-btn btn-info btn pull-right" target="blank_">Ver reglamento</a>
     </div>
     <div class="panel-footer">
-      <%= f.check_box :i_attest %><%= f.label :i_attest, " SI, doy fe.", class: 'control-label' %>
+      <%= f.check_box :i_attest, {}, true, false %><%= f.label :i_attest, " SI, doy fe.", class: 'control-label' %>
     </div>
   </div>
 
@@ -229,7 +237,11 @@
 
   <div class="form-group">
     <div class="actions">
-      <%= f.submit 'Guardar', class: 'btn btn-primary' %>
+      <% if user_signed_in?  %>
+        <%= f.submit ' Guardar', class: 'btn btn-primary btn-lg fa fa-floppy-o' if current_user.is_admin?%>
+      <% else %>
+        <%= f.submit ' Inscribir', class: "btn btn-primary btn-lg fa fa-child" %>  
+      <% end %>
     </div>
   </div>
 <% end %>

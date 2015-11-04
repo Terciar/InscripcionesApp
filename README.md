@@ -36,7 +36,6 @@ Licencia:
     Para poder embeber la aplicación en otro sitio web, tenes que cambiar, en  config/application.rb la linea y poner el dominio que admitis:
         config.action_dispatch.default_headers = { 'X-Frame-Options' => 'ALLOW-FROM http://DOMINIO.com/' }
 
-
 * Instalación para Dev:
     bundler install
 
@@ -75,13 +74,13 @@ Licencia:
   ============
   Necesitarás saber manejar git, si aun no lo conoces: http://bit.ly/probargit
     1. Hace una copia del repositorio (Fork it). Una guía en https://help.github.com/articles/fork-a-repo/
-    2.1 Crea una nueva rama  (git checkout -b MiAporte)
-    2.2 Hacer los cambios que creas necesarios, que agreguen valor a la aplicación.
-    2.3 Agregar las pruebas que pasen para tus cambios.
-    3. Comprometer tus cambios (git commit -am 'Mensaje de que cambias')
-    4. Enviar tu rama cons sus cambios (git push origin MiAporte)
-    5. Ver si pasa el build en Travis: https://travis-ci.org/matiasmasca/InscripcionesApp
-    6. Se crea un nuevo Pull Request que debe ser aprobado.
+    2. Crea una nueva rama  (git checkout -b MiAporte)
+    3. Hacer los cambios que creas necesarios, que agreguen valor a la aplicación.
+    4. Agregar las pruebas que pasen para tus cambios.
+    5. Comprometer tus cambios (git commit -am 'Mensaje de que cambias')
+    6. Enviar tu rama cons sus cambios (git push origin MiAporte)
+    7. Ver si pasa el build en Travis: https://travis-ci.org/matiasmasca/InscripcionesApp
+    8. Se crea un nuevo Pull Request que debe ser aprobado.
 
   Contributing
   ============

@@ -39,6 +39,15 @@ module RegistrationsHelper
     end 
   end
 
+  def estado_civil_array
+    #{ Conviven: 1, Separados: 2, Viudo: 3, Otro: 4 }
+    [['Conviven',1], ['Separados',2], ['Viudo',3], ['Otro',4]]
+  end
+
+  def quien_registra_array
+    [['Padre',1], ['Madre',2], ['Tutor',3], ['Familiar',4], ['Otro',5]]
+  end
+
   ### Grupos Temporada.
   def grupos_temporada
     inicio_temporada = Date.new(2015,10,01)
