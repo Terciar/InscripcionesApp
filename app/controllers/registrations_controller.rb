@@ -75,6 +75,9 @@ class RegistrationsController < ApplicationController
   def confirm_registration
     if params[:admission] == "aprobado"
        @registration.update!(status: 2)
+       #Le envio el mail de confirmación.
+       # Tell the RegistrationMailer to send a notification email after confirm
+       #RegistrationMailer.confirm_registration_email(@registration).deliver_now
     end
 
     if params[:admission] == "rechazado"
