@@ -1,0 +1,230 @@
+<h1>DATOS DE INSCRIPCIÓN</h1>
+<p>
+  <strong>Apellido y Nombre:</strong>
+  <%= @registration.colonist_name %>
+</p>
+
+<p>
+  <strong>Edad:</strong>
+  <%= @registration.colonist_age %>
+</p>
+
+<p>
+  <strong> Fecha de Nacimiento:</strong>
+  <%= @registration.colonist_birtday %>
+</p>
+
+<p>
+  <strong> Genero:</strong>
+  <%= gender_to_text(@registration.colonist_gender) %>
+</p>
+
+<p>
+  <strong> DNI:</strong>
+  <%= @registration.colonist_dni %>
+</p>
+
+<p>
+  <strong> Dirección:</strong>
+  <%= @registration.colonist_address %>
+</p>
+
+<p>
+  <strong> Teléfono:</strong>
+  <%= @registration.colonist_telephone %>
+</p>
+
+<p>
+  <strong> Correo electrónico:</strong>
+  <%= @registration.colonist_email %>
+</p>
+<h2> Datos de la Escuela </h2>
+<p>
+  <strong> Nombre de la Escuela:</strong>
+  <%= @registration.colonist_school_name %>
+</p>
+
+<p>
+  <strong> Grado/Año:</strong>
+  <%= @registration.colonist_grade %>
+</p>
+
+<p>
+  <strong> Dirección Escuela:</strong>
+  <%= @registration.colonist_school_address %>
+</p>
+
+<p>
+  <strong> Teléfono Escuela:</strong>
+  <%= @registration.colonist_school_phone %>
+</p>
+<h2> Datos de Salud </h2>
+<p>
+  <strong> Obra social/prepaga:</strong>
+  <%= @registration.colonist_medical_insurance %>
+</p>
+
+<p>
+  <strong> Traumatismos:</strong>
+  <%= @registration.colonist_trauma %>
+</p>
+
+<p>
+  <strong> Cirugias:</strong>
+  <%= @registration.colonist_surgery %>
+</p>
+
+<p>
+  <strong> ASMA:</strong>
+  <%= boolean_to_text(@registration.colonist_illness_asthma) %>
+</p>
+
+<p>
+  <strong> Alergias:</strong>
+  <%= @registration.colonist_illness_allergy %>
+</p>
+
+<p>
+  <strong> Insuficiencia cardiaca:</strong>
+  <%= boolean_to_text(@registration.colonist_illness_heart_failure) %>
+</p>
+
+<p>
+  <strong> Diabetes:</strong>
+  <%= boolean_to_text(@registration.colonist_illness_diabetes) %>
+</p>
+
+<p>
+  <strong> Otra enfermedad:</strong>
+  <%= @registration.colonist_illness_other %>
+</p>
+
+<p>
+  <strong> Bajo observación medica:</strong>
+  <%= boolean_to_text(@registration.colonist_medical_observation) %>
+</p>
+
+<p>
+  <strong> Conocimiento del doctor sobre actividad:</strong>
+  <%= boolean_to_text(@registration.colonist_doctor) %>
+</p>
+<h2> Natación </h2>
+<p>
+  <strong> Sabe nadar:</strong>
+  <%= boolean_to_text(@registration.colonist_know_swim) %>
+</p>
+
+<p>
+  <strong> Escuela anterior:</strong>
+  <%= @registration.colonist_swim_school %>
+</p>
+
+<p>
+  <strong> Rasones abandono:</strong>
+  <%= @registration.colonist_swim_leave_reasons %>
+</p>
+<h3> Datos de la Escuela </h3>
+<p>
+  <strong>Cómo se entero:</strong>
+  <%= @registration.how_know_us %>
+</p>
+<h3> Entorno Familiar </h3>
+<p>
+  <strong>Parents relation:</strong>
+  <%= @registration.parents_relation %>
+</p>
+<h3> Padre </h3>
+<p>
+  <strong>Apellido y Nombre:</strong>
+  <%= @registration.father_name %>
+</p>
+
+<p>
+  <strong>Edad:</strong>
+  <%= @registration.father_age %>
+</p>
+
+<p>
+  <strong> Vive:</strong>
+  <%= boolean_to_text(@registration.father_lives) %>
+</p>
+
+<p>
+  <strong> Lo visita:</strong>
+  <%= boolean_to_text(@registration.father_visit) %>
+</p>
+
+<p>
+  <strong> Correo eléctronico:</strong>
+  <%= @registration.father_email %>
+</p>
+
+<p>
+  <strong> Profesion:</strong>
+  <%= @registration.father_profession %>
+</p>
+
+<p>
+  <strong> Teléfono laboral:</strong>
+  <%= @registration.father_work_phone %>
+</p>
+<h3> Madre </h3>
+<p>
+  <strong>Apellido y Nombre:</strong>
+  <%= @registration.mother_name %>
+</p>
+
+<p>
+  <strong>Edad:</strong>
+  <%= @registration.mother_age %>
+</p>
+
+<p>
+  <strong>Vive:</strong>
+  <%= boolean_to_text(@registration.mother_lives) %>
+</p>
+
+<p>
+  <strong>Lo visita:</strong>
+  <%= boolean_to_text(@registration.mother_visit) %>
+</p>
+
+<p>
+  <strong>Correo eléctronico:</strong>
+  <%= @registration.mother_email %>
+</p>
+
+<p>
+  <strong>Profesión:</strong>
+  <%= @registration.mother_profession %>
+</p>
+
+<p>
+  <strong>Telefono Laboral:</strong>
+  <%= @registration.mother_work_phone %>
+</p>
+
+<p>
+  <strong>Quién registra:</strong>
+  <%= @registration.who_register %>
+</p>
+
+<p>
+  <strong>Da fe de los datos suministrados?:</strong>
+  <%= boolean_to_text(@registration.i_attest) %>
+</p>
+
+<p>
+  <strong>Posible grupo:</strong>
+  <%= @registration.group.nombre if @registration.group %>
+</p>
+
+<% if user_signed_in?  %>
+  <%= link_to 'Editar', edit_registration_path(@registration), class: "btn btn-default" if current_user.is_admin? %> |
+  <%= link_to 'Lista Inscriptos', registrations_path, class: "btn btn-default" if current_user.is_admin? %>
+<% end %>
+  <%= link_to 'Volver', :back, class: "btn btn-default"   %>
+
+  <br>
+<br>
+<% breadcrumb :registration, @registration %>

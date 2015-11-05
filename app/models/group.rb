@@ -1,5 +1,5 @@
 class Group < ActiveRecord::Base
-#has_many :inscription, autosave: true
+#has_many :registration, autosave: true
 
 #Datos obligatorios:
 # Nombre, sexo, edad_minima, edad_maxima, cupo
@@ -26,6 +26,9 @@ validates :nombre, uniqueness: { message: "ese nombre ya está siendo utilizado.
     fecha.strftime('%Y')
   end
 
+  def inscriptos
+  	Registration.where(group_id: self).count
+  end
 
 
 end

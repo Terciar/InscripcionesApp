@@ -26,5 +26,9 @@ module InscripcionesApp
     #config.assets.initialize_on_precompile = false
 
     config.i18n.default_locale = :es
+
+    # OJO con esto, ya que esta permitiendo que se usen iFrame.
+    config.action_dispatch.default_headers = { 'X-Frame-Options' => 'ALLOW-FROM http://buenaonda.terciar.info/' }
+
   end
 end

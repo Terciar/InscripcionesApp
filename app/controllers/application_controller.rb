@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
       #session[:previous_url] || root_path
     else
       sign_out(resource)
-      flash[:warning] =  "Su usuario ha sido deshabilitado, por favor comuniquese con el admistrador (contacto@terciar.ga)."
+      flash[:warning] =  "Su usuario ha sido deshabilitado, por favor comuniquese con el admistrador (contacto@terciar.info)."
       "/"
     end
   end

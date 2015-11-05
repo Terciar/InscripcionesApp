@@ -62,6 +62,12 @@ class GroupsController < ApplicationController
     end
   end
 
+  # GET /registrations
+  def lista_colonos
+    @registrations = Registration.all.order('created_at DESC').where(group_id: params[:id])
+    render "registrations/index"
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_group

@@ -1,6 +1,5 @@
 <div class="container-fluid">
   <div class="form-group">
-  <p id="notice"><%= notice %></p>
   <h1>Grupos</h1>   
   <% if user_signed_in?  %>
    <%= link_to ' Nuevo grupo', new_group_path, class: "btn btn-primary fa fa-group pull-right" if current_user.is_admin? %>
@@ -27,9 +26,8 @@
         <td><%= sexo_grupo_a_texto(group.sexo) %></td>
         <td><%= group.initial_age %></td>
         <td><%= group.maximun_age %></td>
-        <td><%= group.quota %></td>
-        <td>99/<%= group.quota %></td>
-        <td><%= link_to ' Colonos', "#", type: "button", class: "btn btn-default fa fa-group" %></td>
+        <td><%= badge_registrations(group.inscriptos, group.quota) %><%= group.inscriptos %>/<%= group.quota %></td>
+        <td><%= link_to ' Colonos', lista_colonos_groups_path(group), type: "button", class: "btn btn-default fa fa-group" %></td>
         <td><%= link_to ' Mostrar', group, type: "button", class: "btn btn-default fa fa-plus" %></td>
         <td><%= link_to ' Editar', edit_group_path(group), class: "btn btn-warning fa fa-pencil", title: 'Editar Grupo', data: { toggle: 'tooltip', placement: 'top', original_title: 'Editar detalles del Grupo' }  %></td>
         <td><%= link_to ' Eliminar', group, class:"btn btn-danger fa fa-trash-o", method: :delete, data: { confirm: "¿Esta seguro de que desea eliminar el grupo \'" + group.nombre + "\'?"} %></td>
@@ -42,3 +40,5 @@
 <%= link_to 'Volver', :back, class: "btn btn-default"   %>
 <%= link_to 'Regresar al Menú', root_path, class: "btn btn-default"   %>
 </div>
+<br>
+<% breadcrumb :groups %>

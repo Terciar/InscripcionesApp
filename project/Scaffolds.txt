@@ -1,3 +1,7 @@
 Scaffolds utilizados
 
 rails generate scaffold Group nombre:string sexo:integer quota:integer extended_quota:integer initial_age:integer maximun_age:integer
+
+
+# Para los mails de confirmación
+rails generate mailer RegistrationMailer
