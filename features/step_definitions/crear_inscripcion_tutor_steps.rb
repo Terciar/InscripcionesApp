@@ -39,8 +39,9 @@ Dado(/^completo los datos del colono con "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.
   end
   fill_in "registration_colonist_swim_school", :with =>  colonist_swim_school
   fill_in "registration_colonist_swim_leave_reasons", :with => colonist_swim_leave_reasons  
-  fill_in "registration_how_know_us", :with => how_know_us
-  select parents_relation, :from => "parents_relation_select"
+  fill_in "registration_how_know_us", :with => how_know_us if how_know_us != ""
+  select parents_relation, :from => "parents_relation_select" if parents_relation != ""
+
   fill_in "registration_father_name", :with => father_name
   fill_in "registration_father_age", :with => father_age
   check("registration_father_lives") if father_lives == "SI"
@@ -55,7 +56,7 @@ Dado(/^completo los datos del colono con "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.
   fill_in "registration_mother_email", :with => mother_email
   fill_in "registration_mother_profession", :with => mother_profession
   fill_in "registration_mother_work_phone", :with => mother_work_phone
-  select who_register, :from => "registration_who_register"
+  select who_register, :from => "registration_who_register" if who_register != ""
   check("registration_i_attest") if i_attest == "SI"
   # fill_in  "registration_group_id" 
 
