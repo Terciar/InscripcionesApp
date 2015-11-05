@@ -5,16 +5,15 @@ Dado(/^que estoy en la página inscripciones de la web de la colonia buena onda$
 end
 
 Dado(/^que completo los datos del formulario de inscripción$/) do
-  step %{completo los datos del colono con "Juan Román Riquelme", "10", "11/04/2005", "1", "37455687", "Laprida 2376 Piso 1 Depto 3", "", "", "Saint Patric", "5", "Humboldt 5543", "11 47852365", "Osde", "no", "no", "false", "no", "false", "false", "no", "false", "false", "false", "", "", "Vi publicidad en facebook", "Casado", "Augusto Riquelme", "43", "true", "true", "ariquelme@mail.com", "deportista", "11 1574598632", "Gregoria Matorras", "37", "true", "true", "momimail@correo.com", "ama de casa", "11 478563256", "Madre", "true", "4"}
+  step %{completo los datos del colono con "Juan Jacinto Perez", "5", "13/08/2008", "Varon", "54012456", "Av. Cabildo Nro 10550", "44444444444", "colono12@hotmail.com", "Sagrado corazón", "3", "Luis María Campos Nro. 5550", "11425587963", "OSDE", "NO", "NO", "NO", "NO", "NO", "NO", "NO", "NO", "SI", "SI", "NO", "ninguna", "página de internet", "Casado", "Patricio Perez", "35", "SI", "SI", "correopapa@mail.com", "arquero de futbol", "1174569247", "Alba Roggio", "33", "SI", "SI", "correomama@mail.com", "arquitecta", "11 24685391", "Madre", "SI", "1"}
 end
 
 Dado(/^completo los datos del colono con "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)"$/)  do |colonist_name, colonist_age, colonist_birtday, colonist_gender, colonist_dni, colonist_address, colonist_telephone, colonist_email, colonist_school_name, colonist_grade,colonist_school_address, colonist_school_phone, colonist_medical_insurance,colonist_trauma, colonist_surgery, colonist_illness_asthma, colonist_illness_allergy, colonist_illness_heart_failure, colonist_illness_diabetes, colonist_illness_other, colonist_medical_observation, colonist_doctor, colonist_know_swim, colonist_swim_school, colonist_swim_leave_reasons, how_know_us, parents_relation, father_name, father_age, father_lives, father_visit, father_email, father_profession, father_work_phone, mother_name, mother_age, mother_lives, mother_visit, mother_email, mother_profession, mother_work_phone, who_register, i_attest, group_id|
-  sexo = gender_to_text(colonist_gender)
 
   fill_in  "registration_colonist_name", :with => colonist_name
   fill_in  "registration_colonist_age", :with => colonist_age
-  select_date(colonist_birtday, :from => "Fecha de Nacimiento")
-  choose(sexo)
+  select_date(colonist_birtday, :from => "Fecha de Nacimiento") if colonist_birtday != ""
+  choose(colonist_gender) if colonist_gender != ""
   fill_in  "registration_colonist_dni", :with => colonist_dni
   fill_in  "registration_colonist_address", :with => colonist_address
   fill_in  "registration_colonist_telephone", :with => colonist_telephone
@@ -26,34 +25,38 @@ Dado(/^completo los datos del colono con "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.
   fill_in  "registration_colonist_medical_insurance", :with => colonist_medical_insurance
   fill_in  "registration_colonist_trauma", :with => colonist_trauma
   fill_in  "registration_colonist_surgery", :with => colonist_surgery
-  check("registration_colonist_illness_asthma") if colonist_illness_asthma == "true"
+  check("registration_colonist_illness_asthma") if colonist_illness_asthma == "SI"
   fill_in  "registration_colonist_illness_allergy", :with => colonist_illness_allergy 
-  check("registration_colonist_illness_heart_failure")if colonist_illness_heart_failure == "true"
-  check("registration_colonist_illness_diabetes") if colonist_illness_diabetes == "true"
+  check("registration_colonist_illness_heart_failure")if colonist_illness_heart_failure == "SI"
+  check("registration_colonist_illness_diabetes") if colonist_illness_diabetes == "SI"
   fill_in  "registration_colonist_illness_other", :with => colonist_illness_other
-  check("registration_colonist_medical_observation") if colonist_medical_observation == "true"
-  check("registration_colonist_doctor") if colonist_doctor == "true"
-  check("registration_colonist_know_swim") if colonist_know_swim == "true"
-  fill_in  "registration_colonist_swim_school", :with =>  colonist_swim_school
-  fill_in  "registration_colonist_swim_leave_reasons", :with => colonist_swim_leave_reasons  
-  fill_in  "registration_how_know_us", :with => how_know_us
+  check("registration_colonist_medical_observation") if colonist_medical_observation == "SI"
+  check("registration_colonist_doctor") if colonist_doctor == "SI"
+  if colonist_know_swim == "SI"
+    choose("registration_colonist_know_swim_1")
+  else
+    choose("registration_colonist_know_swim_2")
+  end
+  fill_in "registration_colonist_swim_school", :with =>  colonist_swim_school
+  fill_in "registration_colonist_swim_leave_reasons", :with => colonist_swim_leave_reasons  
+  fill_in "registration_how_know_us", :with => how_know_us
   select parents_relation, :from => "parents_relation_select"
-  fill_in  "registration_father_name", :with => father_name
-  fill_in  "registration_father_age", :with => father_age
-  check("registration_father_lives") if father_lives == "true"
-  check("registration_father_visit") if father_visit == "true"
-  fill_in  "registration_father_email", :with => father_email
-  fill_in  "registration_father_profession", :with => father_profession
-  fill_in  "registration_father_work_phone", :with => father_work_phone
-  fill_in  "registration_mother_name", :with => mother_name
-  fill_in  "registration_mother_age", :with => mother_age
-  check("registration_mother_lives") if mother_lives == "true"
-  check("registration_mother_visit") if mother_visit == "true"
-  fill_in  "registration_mother_email", :with => mother_email
-  fill_in  "registration_mother_profession", :with => mother_profession
-  fill_in  "registration_mother_work_phone", :with => mother_work_phone
+  fill_in "registration_father_name", :with => father_name
+  fill_in "registration_father_age", :with => father_age
+  check("registration_father_lives") if father_lives == "SI"
+  check("registration_father_visit") if father_visit == "SI"  
+  fill_in 'email_padre', with: father_email if father_email
+  fill_in "registration_father_profession", :with => father_profession
+  fill_in "registration_father_work_phone", :with => father_work_phone
+  fill_in "registration_mother_name", :with => mother_name
+  fill_in "registration_mother_age", :with => mother_age
+  check("registration_mother_lives") if mother_lives == "SI"
+  check("registration_mother_visit") if mother_visit == "SI"  
+  fill_in "registration_mother_email", :with => mother_email
+  fill_in "registration_mother_profession", :with => mother_profession
+  fill_in "registration_mother_work_phone", :with => mother_work_phone
   select who_register, :from => "registration_who_register"
-  check("registration_i_attest") if i_attest == "true"
+  check("registration_i_attest") if i_attest == "SI"
   # fill_in  "registration_group_id" 
 
   #  #Crear mock
@@ -105,6 +108,7 @@ Dado(/^completo los datos del colono con "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.
 end
 
 Entonces(/^veo el mensaje de bienvenida a la colonia$/) do
+  #save_and_open_page
   mensaje = "Bienvenido a la familia Buena Onda. Ya estás pre-inscripto. No olvides pasar por el club [dirección] de (9) a (18) dentro de las próximas 72 hs para confirmar la inscripción de " + @registration["colonist_name"] + " y abonar la inscripción."
   assert page.has_content?(mensaje)
 end

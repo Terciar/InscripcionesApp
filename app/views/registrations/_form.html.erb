@@ -139,41 +139,43 @@
   <div class="form-group">
     <%= f.label :parents_relation, "Estado civil de los padres", class: 'control-label' %><br>
     <%= f.select(:parents_relation,  estado_civil_array, {prompt: 'Seleccione una opción', selected: @registration.parents_relation}, class: "form-control", id: "parents_relation_select" )  %>
-
   </div>
-  <div class="form-group">
-    <%= f.label :father_name, "Apellido y Nombre del Padre", class: 'control-label' %><br>
-    <%= f.text_field :father_name, placeholder: "Indique el nombre y apellido del padre." , class: 'form-control' %>
-  </div>
-  <div class="form-group">
-    <%= f.label :father_age, "Edad", class: 'control-label' %><br>
-    <%= f.number_field :father_age, in: 14..99 %>
-  </div>
-  <div class="form-group">
-    <p>¿Vive?
-    <%= f.check_box :father_lives, {}, true, false %>
-    <%= f.label :father_lives, "SI", class: 'control-label' %>
-  </div>
-  <div class="form-group">
-    <p>¿Lo vé habitualmente?<br>
-    <%= f.check_box :father_visit, {}, true, false %>
-    <%= f.label :father_visit, "SI", class: 'control-label' %>
-  </div>
-  <div class="form-group">
-    <%= f.label :father_email, "Correo eléctronico", class: 'control-label' %><br>
-    <div class="input-group margin-bottom-sm">
-      <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
-      <%= f.email_field :father_email, placeholder: "ingrese un correo electronico" , class: 'form-control' %>
+  <div id="padre"><h3> Sobre el papá </h3> 
+    <div class="form-group">
+      <%= f.label :father_name, "Apellido y Nombre del Padre", class: 'control-label' %><br>
+      <%= f.text_field :father_name, placeholder: "Indique el nombre y apellido del padre." , class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :father_age, "Edad", class: 'control-label' %><br>
+      <%= f.number_field :father_age, in: 14..99 %>
+    </div>
+    <div class="form-group">
+      <p>¿Vive?
+      <%= f.check_box :father_lives, {}, true, false %>
+      <%= f.label :father_lives, "SI", class: 'control-label' %>
+    </div>
+    <div class="form-group">
+      <p>¿Lo vé habitualmente?<br>
+      <%= f.check_box :father_visit, {}, true, false %>
+      <%= f.label :father_visit, "SI", class: 'control-label' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :father_email, "Correo eléctronico", class: 'control-label' %><br>
+      <div class="input-group margin-bottom-sm">
+        <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+        <%= f.email_field :father_email, placeholder: "ingrese un correo electronico" , class: 'form-control', id: "email_padre" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :father_profession, "Profesión", class: 'control-label' %><br>
+      <%= f.text_field :father_profession, placeholder: "Indique a que se dedica" , class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :father_work_phone, "Teléfono laboral", class: 'control-label' %><br>
+      <%= f.text_field :father_work_phone, placeholder: "Numero para llamarlo solo en caso de ser necesario" , class: 'form-control' %>
     </div>
   </div>
-  <div class="form-group">
-    <%= f.label :father_profession, "Profesión", class: 'control-label' %><br>
-    <%= f.text_field :father_profession, placeholder: "Indique a que se dedica" , class: 'form-control' %>
-  </div>
-  <div class="form-group">
-    <%= f.label :father_work_phone, "Teléfono laboral", class: 'control-label' %><br>
-    <%= f.text_field :father_work_phone, placeholder: "Numero para llamarlo solo en caso de ser necesario" , class: 'form-control' %>
-  </div>
+  <div id="madre"><h3> Sobre la mamá </h3> 
   <div class="form-group">
     <%= f.label :mother_name, "Apellido y Nombre de la Madre", class: 'control-label' %><br>
     <%= f.text_field :mother_name, placeholder: "correomadre@terciar.info" , class: 'form-control' %>
@@ -207,6 +209,8 @@
     <%= f.label :mother_work_phone, "Teléfono laboral", class: 'control-label' %><br>
     <%= f.text_field :mother_work_phone, placeholder: "Ingrese un teléfono para comunicarnos en caso de ser necesario" , class: 'form-control' %>
   </div>
+  </div>
+  <h3> Otros </h3> 
    <div class="form-group">
     <%= f.label :how_know_us, "¿Cómo se enteró de \"Buena Onda\"?", class: 'control-label' %><br>
     <%= f.text_field :how_know_us, placeholder: "" , class: 'form-control' %>

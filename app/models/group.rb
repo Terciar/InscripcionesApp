@@ -1,5 +1,5 @@
 class Group < ActiveRecord::Base
-#has_many :inscription, autosave: true
+#has_many :registration, autosave: true
 
 #Datos obligatorios:
 # Nombre, sexo, edad_minima, edad_maxima, cupo
