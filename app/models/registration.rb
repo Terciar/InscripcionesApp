@@ -7,6 +7,21 @@ class Registration < ActiveRecord::Base
 #Datos numericos,
   validates :colonist_age, :colonist_grade, :father_age, :mother_age, numericality: { only_integer: true, greater_than: 2, less_than: 110, message: "debe ser entre 2 y 110." }
 
+#formato email valido
+  validates :colonist_email, :father_email, :mother_email, format: { with: /\A[\w+\-.]+@[a-z\d\-.]{2,}+\.[a-z]{2,3}\Z/i , message: "(dirección de correo electrónico) es invalido."}
+  #\A inicio con cadena.
+  # [\w+\-.] caracter de palabra, un guio o un punto.
+  # @ un arroba
+  # [a-z\d\-.] almenos una letra, un guion
+  # {2,} minimo 2 caracteres.
+  # \. que haya al menos 1 punto "."
+  # [a-z]{2,3} que haya entre 2 y 3 letras seguidas: ar, com, etc.
+  # /i pueden ser letras mayusculas o minusculas.
+
+#Nombres sin Numeros
+  validates :colonist_name, :father_name, :mother_name, format: { with: /\d/i , message: "(el nombre tiene un número) es invalido."}
+
+
 # Campos.
 # :colonist_name
 # :colonist_age
