@@ -19,7 +19,7 @@ class Registration < ActiveRecord::Base
   # /i pueden ser letras mayusculas o minusculas.
 
 #Nombres sin Numeros
-  validates :colonist_name, :father_name, :mother_name, format: { with: /\d/i , message: "(el nombre tiene un número) es invalido."}
+  validates :colonist_name, :father_name, :mother_name, format: { with: /\A(\D+)\z/x, message: "(el nombre tiene un número) es invalido."}
 
 
 # Campos.
