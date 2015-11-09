@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= content_for?(:title) ? yield(:title) : "Inscripciones Terciar" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Inscripciones Terciar" %>">
+    <script src='https://www.google.com/recaptcha/api.js'></script>
    <!-- Latest compiled and minified JavaScript -->
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -14,7 +15,7 @@
     <header>
     </header>
     <main role="main">
-       <%= render 'layouts/messages' %>
+       <%= render 'partials/messages' %>
        <%= yield %>
        <!-- Navegación -->
          <%= breadcrumbs pretext: "", separator: " &rsaquo; ", style: :bootstrap %>

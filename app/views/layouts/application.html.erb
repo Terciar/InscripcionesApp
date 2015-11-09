@@ -12,10 +12,10 @@
   </head>
   <body>
     <header>
-      <%= render 'layouts/navigation' %>
+      <%= render 'partials/navigation' %>
     </header>
     <main role="main">
-       <%= render 'layouts/messages' %>
+       <%= render 'partials/messages' %>
        <%= yield %>
        <!-- Navegación -->
          <%= breadcrumbs pretext: "", separator: " &rsaquo; ", style: :bootstrap %>

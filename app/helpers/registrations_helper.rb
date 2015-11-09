@@ -57,4 +57,7 @@ module RegistrationsHelper
     fin_temporada = Date.new(2016,03,31)
     grupos = Group.where(created_at: inicio_temporada..fin_temporada)
   end
+
+
+
 end

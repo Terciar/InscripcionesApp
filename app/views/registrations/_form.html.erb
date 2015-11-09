@@ -241,9 +241,10 @@
 
   <div class="form-group">
     <div class="actions">
-      <% if user_signed_in?  %>
+      <% if user_signed_in? %>
         <%= f.submit ' Guardar', class: 'btn btn-primary btn-lg fa fa-floppy-o' if current_user.is_admin?%>
       <% else %>
+        <%= render partial: "partials/recaptcha" if Rails.env.production? %>
         <%= f.submit ' Inscribir', class: "btn btn-primary btn-lg fa fa-child" %>  
       <% end %>
     </div>

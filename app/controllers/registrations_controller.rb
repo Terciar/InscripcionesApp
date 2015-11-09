@@ -1,9 +1,11 @@
 
 class RegistrationsController < ApplicationController
+  include RecaptchaVerify
+ 
   before_action :authenticate_user!, only: [:index, :edit, :update, :destroy]
   before_action :set_registration, only: [:show, :edit, :update, :destroy, :change_group, :confirm_registration ]
 
-  #layout "sin_menu", :only => [:new] 
+  before_action :check_recaptcha, :only => [:create] 
  
   # GET /registrations
   # GET /registrations.json
@@ -32,7 +34,7 @@ class RegistrationsController < ApplicationController
   def create
     @registration = Registration.new(registration_params)
     @registration.group_id = sortear_grupo(@registration.colonist_age, @registration.colonist_gender)
-
+    
     respond_to do |format|
       if @registration.save
         format.html { redirect_to @registration, notice: "Bienvenido a la familia Buena Onda. Ya estás pre-inscripto. No olvides pasar por el club [dirección] de (9) a (18) dentro de las próximas 72 hs para confirmar la inscripción de #{@registration.colonist_name} y abonar la inscripción." }
@@ -94,7 +96,7 @@ class RegistrationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def registration_params
-      params.require(:registration).permit(:colonist_name, :colonist_age, :colonist_birtday, :colonist_gender, :colonist_dni, :colonist_address, :colonist_telephone, :colonist_email, :colonist_school_name, :colonist_grade, :colonist_school_address, :colonist_school_phone, :colonist_doctor, :colonist_know_swim, :colonist_swim_school, :colonist_swim_leave_reasons, :how_know_us, :parents_relation, :father_name, :father_age, :father_lives, :father_visit, :father_email, :father_profession, :father_work_phone, :mother_name, :mother_age, :mother_lives, :mother_visit, :mother_email, :mother_profession, :mother_work_phone, :who_register, :i_attest, :group_id, :admission)
+      params.require(:registration).permit(:colonist_name, :colonist_age, :colonist_birtday, :colonist_gender, :colonist_dni, :colonist_address, :colonist_telephone, :colonist_email, :colonist_school_name, :colonist_grade, :colonist_school_address, :colonist_school_phone, :colonist_medical_insurance, :colonist_trauma, :colonist_surgery, :colonist_illness_asthma, :colonist_illness_allergy, :colonist_illness_heart_failure, :colonist_illness_diabetes, :colonist_illness_other, :colonist_medical_observation, :colonist_doctor, :colonist_know_swim, :colonist_swim_school, :colonist_swim_leave_reasons, :how_know_us, :parents_relation, :father_name, :father_age, :father_lives, :father_visit, :father_email, :father_profession, :father_work_phone, :mother_name, :mother_age, :mother_lives, :mother_visit, :mother_email, :mother_profession, :mother_work_phone, :who_register, :i_attest, :group_id, :admission)
     end
 
    def sortear_grupo(age, gender)
@@ -121,5 +123,18 @@ class RegistrationsController < ApplicationController
     end
     #logger.debug ("ACA!!!!!!!!!!!!!Grupo sorteado: #{grupo}")
     return grupo
+  end
+
+  def check_recaptcha
+    unless user_signed_in?
+      if Rails.env.production? #Saltar comprobación en Development y Test.        
+        unless verify_recaptcha(params["g-recaptcha-response"])
+          #flash[:notice] = "Recaptcha verification Failed"
+          redirect_to :back, alert: "Debes completar el campo CAPTCHA anti-robots de spam." and return
+          #redirect_to(:back, alert: "Debes completar el campo CAPTCHA anti-robots de spam.")
+          return false
+        end
+      end
+    end
   end
 end
