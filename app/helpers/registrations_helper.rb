@@ -43,8 +43,8 @@ module RegistrationsHelper
   end
 
   def estado_civil_array
-    #{ Soltero: 1, Casado: 2, Divorsiado: 3, Viudo: 4 }
-    [['Soltero',1], ['Casado',2], ['Divorsiado',3], ['Viudo',4]]
+    #{ Soltero: 1, Casado: 2, Divorciado: 3, Viudo: 4 }
+    [['Soltero',1], ['Casado',2], ['Divorciado',3], ['Viudo',4]]
   end
 
   def quien_registra_array
