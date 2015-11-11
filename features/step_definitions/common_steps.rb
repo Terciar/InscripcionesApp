@@ -15,6 +15,8 @@ Dado(/^(?:estoy en la pantalla|me encuentro en la pantalla|estoy en la pantalla 
     visit('/admin/groups')
   when 'ver todos los grupos'
     visit('/admin/groups')
+  when 'Colonos'
+    visit('registrations')
   else
     visit('/¿A donde queres ir?')
   end

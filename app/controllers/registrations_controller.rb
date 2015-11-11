@@ -51,7 +51,7 @@ class RegistrationsController < ApplicationController
   def update
     respond_to do |format|
       if @registration.update(registration_params)
-        format.html { redirect_to @registration, notice: 'Se actualizarón correctamente los datos.' }
+        format.html { redirect_to @registration, notice: 'Se actualizarón los datos correctamente.' }
         format.json { render :show, status: :ok, location: @registration }
       else
         format.html { render :edit }
