@@ -10,6 +10,7 @@
       </ul>
     </div>
   <% end %>
+  <p> Para considerar la inscripción de su tutelado a la colonia es necesario que complete todas las opciones del formulario. Esto nos ayuda a analizar cada caso en particular.</p>
   <h1> Datos Colono </h1> 
   <div class="form-group">
     <%= f.label :colonist_name, "Nombre", class: 'control-label' %><br>
@@ -22,7 +23,7 @@
   <div class="form-group">
     <%= f.label :colonist_birtday, "Fecha de Nacimiento", class: 'control-label' %><br>
     <% %>
-    <%= f.date_select :colonist_birtday, start_year: 2000, end_year:2013 , class: 'form-control' %>
+    <%= f.date_select :colonist_birtday, start_year: 2000, end_year:2013, prompt: true , class: 'form-control' %>
   </div>
    <div class="btn-group" data-toggle="buttons">
     <p>Genero<br>    
@@ -85,21 +86,25 @@
   <h3> Enfermedades </h3> 
   <div class="form-group">
     <p>ASMA:
+     <%= f.check_box :colonist_illness_asthma, {:checked => true, :style => 'visibility: hidden'}, false %>
      <%= f.check_box :colonist_illness_asthma, {}, true, false %>
      <%= f.label :colonist_illness_asthma, "SI" , class: 'control-label' %>
     </p>
   </div>
   <div class="form-group">
     <p>Insuficiencia cardíaca:
+    <%= f.check_box :colonist_illness_heart_failure, {:checked => true, :style => 'visibility: hidden'}, false %>
     <%= f.check_box :colonist_illness_heart_failure, {}, true, false %>
     <%= f.label :colonist_illness_heart_failure, "SI", class: 'control-label' %>
   </div>
   <div class="form-group">
     <p> Diabetes:
+    <%= f.check_box :colonist_illness_diabetes, {:checked => true, :style => 'visibility: hidden'}, false %>
     <%= f.check_box :colonist_illness_diabetes, {}, true, false %>
     <%= f.label :colonist_illness_diabetes, "SI", class: 'control-label' %>
   </div>
   <div class="form-group">
+
     <%= f.label :colonist_illness_allergy, "Alergias", class: 'control-label' %><br>
     <%= f.text_field :colonist_illness_allergy, placeholder: "Indique a qué es alergico el menor." , class: 'form-control' %>
   </div>
@@ -109,22 +114,25 @@
   </div>
   <div class="form-group">
     <p>¿Actualmente está en observación y/o tratamiento alguno? (físico y/o psicológico)<br>
+    <%= f.check_box :colonist_medical_observation, {:checked => true, :style => 'visibility: hidden'}, false %>
     <%= f.check_box :colonist_medical_observation, {}, true, false %>
     <%= f.label :colonist_medical_observation, "SI", class: 'control-label' %>
   </div>
   <div class="form-group">
     <p>¿El médico de cabecera está informado de la actividad que vas a realizar?<br>
-    <%= f.check_box :colonist_doctor, {}, true, false %>
+    <%= f.radio_button :colonist_doctor, true %>
     <%= f.label :colonist_doctor, "SI", class: 'control-label' %>
+    <%= f.radio_button :colonist_doctor, false %>
+    <%= f.label :colonist_doctor, "NO", class: 'control-label' %>
   </div>
   <h2> Otros Datos Colono </h2>
   <h3> Natación </h3>  
   <div class="form-inline">
     <p>¿Sabe Nadar?<br>
     <%= label :colonist_know_swim, "SI", class: 'radio-inline' %>
-    <%= f.radio_button :colonist_know_swim, '1', class: 'form-control' %>
+    <%= f.radio_button :colonist_know_swim, true, class: 'form-control' %>
     <%= label :colonist_know_swim, "NO", class: 'radio-inline' %>
-    <%= f.radio_button :colonist_know_swim, '2', class: 'form-control' %>
+    <%= f.radio_button :colonist_know_swim, false, class: 'form-control' %>
   </div>
 
   <div class="form-group">

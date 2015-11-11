@@ -31,11 +31,17 @@ Dado(/^completo los datos del colono con "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.
   check("registration_colonist_illness_diabetes") if colonist_illness_diabetes == "SI"
   fill_in  "registration_colonist_illness_other", :with => colonist_illness_other
   check("registration_colonist_medical_observation") if colonist_medical_observation == "SI"
-  check("registration_colonist_doctor") if colonist_doctor == "SI"
-  if colonist_know_swim == "SI"
-    choose("registration_colonist_know_swim_1")
+  
+  if colonist_doctor == "SI"
+    choose("registration_colonist_doctor_true")
   else
-    choose("registration_colonist_know_swim_2")
+    choose("registration_colonist_doctor_false")
+  end
+  
+  if colonist_know_swim == "SI"
+    choose("registration_colonist_know_swim_true")
+  elsif colonist_know_swim == "NO"
+    choose("registration_colonist_know_swim_false")
   end
   fill_in "registration_colonist_swim_school", :with =>  colonist_swim_school
   fill_in "registration_colonist_swim_leave_reasons", :with => colonist_swim_leave_reasons  
