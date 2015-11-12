@@ -13,7 +13,7 @@ Antecedentes:
 Escenario: veo el detalle de un grupo
     Entonces veo el texto "Nombre del grupo: Varones 2015"
     Y veo el texto "Año: 2015"
-	Y veo el texto "Sexo: Varones"
+    Y veo el texto "Sexo: Varones"
     Y veo el texto "Cupo: 20"
     Y veo el texto "Cupo extra: 5"
-	Y veo el texto "Edad: desde 4 años hasta 5 años."
+    Y veo el texto "Edad: desde 4 años hasta 5 años."
