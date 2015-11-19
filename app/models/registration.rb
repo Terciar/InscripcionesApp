@@ -27,6 +27,8 @@ class Registration < ActiveRecord::Base
   validates :colonist_name, :father_name, :mother_name, format: { with: /\A(\D+)\z/xi, message: "es invalido porque el campo tiene un número, ingrese solo letras."}
   validates :colonist_medical_insurance, format: { with: /\A(\D+)\z/xi, message: "es invalido porque el campo tiene un número, ingrese solo letras."}
 
+# DNI Unico 
+  validates :colonist_dni, uniqueness: { case_sensitive: false, message: "ese DNI ya está siendo utilizado." }
 # Campos.
 # :colonist_name
 # :colonist_age
