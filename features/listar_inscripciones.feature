@@ -2,40 +2,36 @@
 Característica: listar inscripciones a colonia
   Como administrador del sitio
   Quiero poder ver una lista de todos los colonos inscripto a la colonia
-  Para ver quienes están inscriptos ese grupo.
+  Para ver quienes están inscriptos
 
 Antecedentes:
-  Dado que soy administador registrado
-  Y me identifico como "admin@club.com"
+  Dado que estoy identificado como "Administrador"
   Y que estoy en la pantalla de "Inicio"
-  Y que presione el botón "Colonos"
+  Y que presione la opción "Listado Colonos" del menú
   Y estoy en la pantalla "Colonos"
 
 #Camino feliz
-@wip
 Escenario: Hay 4 inscriptos
-    Dado que hay 4 inscriptos
-    Y me encuentro en la pantalla "Colonos"
-    | Apellido y Nombe    | Edad | Sexo | Tel_contacto |
-    | Basterrica Juan     | 4    | M    | 15432674558  |
-    | Blanco Octavio      | 5    | M    | 15432471111  |
-    | Nieves Raúl         | 4    | M    | 15474114558  |
-    | Olarticoche Alberto | 4    | M    | 15432417888  |
-    Entonces veo la lista de  los 4 inscriptos a ese grupo.
+  Dado que hay 4 inscriptos
+    | Group    | Colono                    | Edad | Sexo  | DNI      | Nadar |
+    | group1 m | Eva Brown                 | 5    | Mujer | 40875325 | SI    |
+    | group4 v | Josemir Lujambio          | 9    | Varón | 38475325 | SI    |
+    | group4 v | Sebastián Pascual Rambert | 9    | Varón | 38412871 | SI    |
+    | group4 v | Juan Román Riquelme       | 10   | Varón | 37455687 | SI    |
+  Y me encuentro en la pantalla "Colonos"
+  Entonces veo la lista de los 4 inscriptos.
 
-@wip
 Escenario: Hay 4 inscriptos (ordenados alfabéticamente)
   Dado que hay 4 inscriptos
+    | Group    | Colono                    | Edad | Sexo  | DNI      | Nadar |
+    | group1 m | Eva Brown                 | 5    | Mujer | 40875325 | SI    |
+    | group4 v | Josemir Lujambio          | 9    | Varón | 38475325 | SI    |
+    | group4 v | Sebastián Pascual Rambert | 9    | Varón | 38412871 | SI    |
+    | group4 v | Juan Román Riquelme       | 10   | Varón | 37455687 | SI    |
   Y me encuentro en la pantalla "Colonos"
-  Cuando presiono el botón "Ver Inscriptos"
-    | Apellido y Nombe    | Edad | Sexo | Tel_contacto |
-    | Blanco Octavio      | 5    | M    | 15432471111  |
-    | Nieves Raúl         | 4    | M    | 15474114558  |
-    | Olarticoche Alberto | 4    | M    | 15432417888  |
-    | Basterrica Juan     | 4    | M    | 15432674558  |
-  Entonces debo ver "Basterrica" antes que "Blanco"
+  Entonces debo ver "Juan Román Riquelme" antes que "Sebastián Pascual Rambert"
 
-@wip
-Escenario: No hay inscriptos al grupo
-    Dado que no hay inscriptos al grupo.
-    Entonces veo una lista vacía.
+Escenario: No hay inscriptos
+  Dado que no hay inscriptos
+  Y me encuentro en la pantalla "Colonos"
+  Entonces veo una lista vacía.

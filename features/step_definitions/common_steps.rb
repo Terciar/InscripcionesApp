@@ -31,6 +31,17 @@ Dado(/^seleccionó "(.*?)"$/) do |opcion|
   end
 end
 
+Dado(/^que presione la opción "(.*?)" del menú$/) do |opcion_menu|
+  case opcion_menu
+  when 'Listado Colonos'
+    #save_and_open_page
+    click_on("Listado Colonos")
+  else
+    visit('/¿A donde queres ir?')
+  end
+end
+
+
 Entonces(/^mostrame la pagina$/) do
   save_and_open_page
 end
