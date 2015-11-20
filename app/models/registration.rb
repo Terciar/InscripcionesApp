@@ -5,9 +5,9 @@ class Registration < ActiveRecord::Base
   validates :colonist_name, :colonist_age, :colonist_birtday, :colonist_gender, :colonist_dni, :colonist_address, :colonist_telephone, :colonist_email, :colonist_school_name, :colonist_grade, :colonist_school_address, :colonist_school_phone, :colonist_swim_school, :colonist_swim_leave_reasons, :how_know_us, :parents_relation, :father_name, :father_age, :father_lives, :father_visit, :father_email, :father_profession, :father_work_phone, :mother_name, :mother_age, :mother_lives, :mother_visit, :mother_email, :mother_profession, :mother_work_phone, :who_register, :i_attest , presence: { message: "es un dato obligatorio."}
   
 #Datos numericos,
-  validates :colonist_age, :colonist_grade, :father_age, :mother_age, numericality: { only_integer: true, greater_than: 2, less_than: 110, message: "debe ser entre 2 y 110." }
-  validates :colonist_dni, numericality: { only_integer: true, greater_than: 30_000_000, less_than: 100_000_000, message: "debe ser entre 30000000 y 100000000. Sin puntos." } 
-  validates :colonist_school_phone, numericality: { only_integer: true, message: "Ingrese solo digitos en el número de teléfono de la Escuela, sin puntos ni rayas." }
+  validates :colonist_age, :colonist_grade, :father_age, :mother_age, numericality: { only_integer: true, greater_than: 2, less_than: 110, message: "debe ser un número entre 2 y 110." }
+  validates :colonist_dni, numericality: { only_integer: true, greater_than: 30_000_000, less_than: 100_000_000, message: "debe ser solo números entre 30000000 y 100000000. Sin puntos, ni rayas ni espacios." } 
+  validates :colonist_telephone, :colonist_school_phone, :father_work_phone , :mother_work_phone, numericality: { only_integer: true, message: "Ingrese solo digitos en el número de teléfono, sin puntos, rayas o espacios." }
 
 # Validar Booleanos.
   validates :colonist_doctor, :colonist_know_swim, inclusion: { in: [true, false], message: "es obligatorio, seleccione una opción."}
@@ -24,11 +24,16 @@ class Registration < ActiveRecord::Base
   # /i pueden ser letras mayusculas o minusculas.
 
 #Nombres sin Numeros
-  validates :colonist_name, :father_name, :mother_name, format: { with: /\A(\D+)\z/xi, message: "es invalido porque el campo tiene un número, ingrese solo letras."}
-  validates :colonist_medical_insurance, format: { with: /\A(\D+)\z/xi, message: "es invalido porque el campo tiene un número, ingrese solo letras."}
+  validates :colonist_name, :father_name, :mother_name, :father_profession, :mother_profession, format: { with: /\A(\D+)\z/xi, message: "es invalido porque el campo tiene un número, ingrese solo letras."}
+  validates :colonist_medical_insurance, format: { with: /\A(\D+)\z/xi, message: "es invalido porque el campo tiene algun número, ingrese solo letras en el nombre."}
 
 # DNI Unico 
   validates :colonist_dni, uniqueness: { case_sensitive: false, message: "ese DNI ya está siendo utilizado." }
+
+# Cadena con Letras: debe tener letras, no puede ser solo numeros.
+  validates :colonist_address, format: { with: /([a-zA-Z]+)([\d]*)/i , message: "(dirección) es invalido, usted ingresó solo digitos sin letras."}
+
+
 # Campos.
 # :colonist_name
 # :colonist_age

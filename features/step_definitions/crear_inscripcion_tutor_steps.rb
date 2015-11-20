@@ -5,7 +5,7 @@ Dado(/^que estoy en la página inscripciones de la web de la colonia buena onda$
 end
 
 Dado(/^que completo los datos del formulario de inscripción$/) do
-  step %{completo los datos del colono con "Juan Jacinto Perez", "5", "13/08/2008", "Varon", "54012456", "Av. Cabildo Nro 10550", "44444444444", "colono12@hotmail.com", "Sagrado corazón", "3", "Luis María Campos Nro. 5550", "11425587963", "osde", "NO", "NO", "NO", "NO", "NO", "NO", "NO", "NO", "SI", "SI", "NO", "ninguna", "página de internet", "Casado", "Patricio Perez", "35", "SI", "SI", "correopapa@mail.com", "arquero de futbol", "1174569247", "Alba Roggio", "33", "SI", "SI", "correomama@mail.com", "arquitecta", "11 24685391", "Madre", "SI", "1"}
+  step %{completo los datos del colono con "Juan Jacinto Perez", "5", "13/08/2008", "Varon", "54012456", "Av. Cabildo Nro 10550", "44444444444", "colono12@hotmail.com", "Sagrado corazón", "3", "Luis María Campos Nro. 5550", "11425587963", "osde", "NO", "NO", "NO", "NO", "NO", "NO", "NO", "NO", "SI", "SI", "NO", "ninguna", "página de internet", "Casado", "Patricio Perez", "35", "SI", "SI", "correopapa@mail.com", "arquero de futbol", "1174569247", "Alba Roggio", "33", "SI", "SI", "correomama@mail.com", "arquitecta", "1124685391", "Madre", "SI", "1"}
 end
 
 Dado(/^completo los datos del colono con "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)"$/)  do |colonist_name, colonist_age, colonist_birtday, colonist_gender, colonist_dni, colonist_address, colonist_telephone, colonist_email, colonist_school_name, colonist_grade,colonist_school_address, colonist_school_phone, colonist_medical_insurance,colonist_trauma, colonist_surgery, colonist_illness_asthma, colonist_illness_allergy, colonist_illness_heart_failure, colonist_illness_diabetes, colonist_illness_other, colonist_medical_observation, colonist_doctor, colonist_know_swim, colonist_swim_school, colonist_swim_leave_reasons, how_know_us, parents_relation, father_name, father_age, father_lives, father_visit, father_email, father_profession, father_work_phone, mother_name, mother_age, mother_lives, mother_visit, mother_email, mother_profession, mother_work_phone, who_register, i_attest, group_id|
@@ -61,7 +61,7 @@ Dado(/^completo los datos del colono con "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.
   check("registration_mother_visit") if mother_visit == "SI"  
   fill_in "registration_mother_email", :with => mother_email
   fill_in "registration_mother_profession", :with => mother_profession
-  fill_in "registration_mother_work_phone", :with => mother_work_phone
+  fill_in "registration_mother_work_phone", :with => mother_work_phone if mother_work_phone != ""
   select who_register, :from => "registration_who_register" if who_register != ""
   check("registration_i_attest") if i_attest == "SI"
   # fill_in  "registration_group_id" 
