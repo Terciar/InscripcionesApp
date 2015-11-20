@@ -5,57 +5,55 @@ Característica: mostrar inscripción
   Para averiguar alguno de los datos que fueron ingresados en su ficha de inscripción.
 
 Antecedentes:
-  Dado que me encuentro identificado como "Administrador"
-  Dado que existe un colono "Juan Alberto Badía"
+  Dado que estoy identificado como "Administrador"
+  Y que existe un colono "Juan Alberto Badía"
   Y estoy en la pantalla "Colonos"
+
 Escenario:
   Y presiono el botón "Mostrar"
-  Entonces Veo la pantalla "datos del colono" con los datos que cargó en el momento en que se inscribió.
-|Etiqueta               |Valor  |
-|Temporada              | 2015-2016|
-|Nombre y Apellido      | Badia Juan Alberto|
+  Entonces veo la pantalla "datos del colono" con los datos que cargó en el momento en que se inscribió.
+|Temporada              | 2015|
+|Apellido y Nombre      | Juan Alberto Badía|
 |Edad                   | 5 |
 |Fecha de nacimiento    | 21/09/2010|
-|DNI                    | 41.248.778|
+|DNI                    | 41248778|
 |Domicilio              | Grecia 3435 1º B|
 |Teléfono               | 11 1542769881|
 |Dirección de eMail     | juanbadi@live.com|
 |Colegio al que concurre| Esclavas del sagrado corazón de jesús|
-|Grado                  | 5to|
+|Grado/Año              | 5.º|
 |Dirección              | Luis María Campos N 3877|
 |Teléfono               | 4675991|
-|Obra Social            | Osde|
+|Obra social/prepaga    | Osde|
 |Traumatismos           | Ninguno|
 |Operaciones (cirugías) | Ninguno|
-|Enfermedades           |        | 
 |ASMA                   | No  |
-|ALERGIA                | No  |
+|ALERGIAS               | No  |
 |INSUFICIENCIA CARDIACA | No  |
-|DIABETES               | No        |
-|Otra                   | No        |
-|Especificar            | ----------|
+|DIABETES               | No  |
+|Otras enfermedades (Especificar)     |   ----------| 
 |¿Actualmente está en observación y/o tratamiento alguno? (físico y/o psicológico) | No |
-|El médico de cabecera está informado de la actividad que vas a realizar?          | Si |
-|¿Concurrió a otra Escuela de Natación anteriormente?                              | Si |
-|¿A cuál?                                                                          | Hipocampo |
+|¿El médico de cabecera está informado de la actividad que vas a realizar?          | Si |
+|¿Sabe nadar?                             | Si |
+|¿Concurrió a otra Escuela de Natación anteriormente? ¿A cuál?                                                                         | Hipocampo |
 |¿Por qué dejó de concurrir? | Era lejos de mi casa|
 |¿Cómo se informo de "Buena Onda"? | Vi su página en Internet|
 |Estado civil de los padres | Casados|
-|Nombre y Apellido      | Badía Rogelio Ramón |
+|Nombre y Apellido del Padre | Rogelio Ramón Badía |
 |Edad del Padre         | 41 |
-|vive                   | si |
+|Vive                   | si |
 |¿Lo ve habitualmente?  | si |
 |Dirección de email     | papa_badi@yahoo.com |
 |Profesión              | Abogado |
-|Teléfono Laboral       | 114781004 |
-|Nombre y Apellido      | Mateyko Juana|
+|Teléfono laboral       | 114781004 |
+|Nombre y apellido      | Juana Mateyko|
 |Edad                   | 34 |
-|vive                   | si |
+|Vive                   | si |
 |¿La ve habitualmente?  | si |
 |Dirección de email     | juanitamat@ole.es|
 |Profesión              | ama de casa|
-|Teléfono Laboral       | 1145762214 |
-|Registro               | Madre|
+|Teléfono laboral       | 1145762214 |
+|Quién registró               | Madre|
 |Dio fe                 | si |
 |Posible grupo:         |   |
 

@@ -1,3 +1,4 @@
+<h3> Temporada <%= @registration.created_at.year %></h3>
 <h1>DATOS DE INSCRIPCIÓN</h1>
 <p>
   <strong>Apellido y Nombre:</strong>
@@ -10,8 +11,8 @@
 </p>
 
 <p>
-  <strong> Fecha de Nacimiento:</strong>
-  <%= @registration.colonist_birtday %>
+  <strong> Fecha de nacimiento:</strong>
+  <%= fecha_arg(@registration.colonist_birtday) %>
 </p>
 
 <p>
@@ -25,7 +26,7 @@
 </p>
 
 <p>
-  <strong> Dirección:</strong>
+  <strong> Domicilio:</strong>
   <%= @registration.colonist_address %>
 </p>
 
@@ -35,18 +36,18 @@
 </p>
 
 <p>
-  <strong> Correo electrónico:</strong>
+  <strong> Dirección de eMail:</strong>
   <%= @registration.colonist_email %>
 </p>
 <h2> Datos de la Escuela </h2>
 <p>
-  <strong> Nombre de la Escuela:</strong>
+  <strong> Colegio al que concurre:</strong>
   <%= @registration.colonist_school_name %>
 </p>
 
 <p>
   <strong> Grado/Año:</strong>
-  <%= @registration.colonist_grade %>
+  <%= ordinalizar_abreviado(@registration.colonist_grade) %>
 </p>
 
 <p>
@@ -70,7 +71,7 @@
 </p>
 
 <p>
-  <strong> Cirugias:</strong>
+  <strong> Operaciones (cirugías):</strong>
   <%= @registration.colonist_surgery %>
 </p>
 
@@ -80,67 +81,67 @@
 </p>
 
 <p>
-  <strong> Alergias:</strong>
+  <strong> ALERGIAS:</strong>
   <%= @registration.colonist_illness_allergy %>
 </p>
 
 <p>
-  <strong> Insuficiencia cardiaca:</strong>
+  <strong> INSUFICIENCIA CARDIACA:</strong>
   <%= boolean_to_text(@registration.colonist_illness_heart_failure) %>
 </p>
 
 <p>
-  <strong> Diabetes:</strong>
+  <strong> DIABETES:</strong>
   <%= boolean_to_text(@registration.colonist_illness_diabetes) %>
 </p>
 
 <p>
-  <strong> Otra enfermedad:</strong>
+  <strong> Otras enfermedades (Especificar):</strong>
   <%= @registration.colonist_illness_other %>
 </p>
 
 <p>
-  <strong> Bajo observación medica:</strong>
+  <strong> ¿Actualmente está en observación y/o tratamiento alguno? (físico y/o psicológico):</strong>
   <%= boolean_to_text(@registration.colonist_medical_observation) %>
 </p>
 
 <p>
-  <strong> Conocimiento del doctor sobre actividad:</strong>
+  <strong> ¿El médico de cabecera está informado de la actividad que vas a realizar?:</strong>
   <%= boolean_to_text(@registration.colonist_doctor) %>
 </p>
 <h2> Natación </h2>
 <p>
-  <strong> Sabe nadar:</strong>
+  <strong> ¿Sabe nadar?:</strong>
   <%= boolean_to_text(@registration.colonist_know_swim) %>
 </p>
 
 <p>
-  <strong> Escuela anterior:</strong>
+  <strong> ¿Concurrió a otra Escuela de Natación anteriormente? ¿A cuál?:</strong>
   <%= @registration.colonist_swim_school %>
 </p>
 
 <p>
-  <strong> Rasones abandono:</strong>
+  <strong> ¿Por qué dejó de concurrir?:</strong>
   <%= @registration.colonist_swim_leave_reasons %>
 </p>
 <h3> Datos de la Escuela </h3>
 <p>
-  <strong>Cómo se entero:</strong>
+  <strong>¿Cómo se informo de "Buena Onda"?:</strong>
   <%= @registration.how_know_us %>
 </p>
 <h3> Entorno Familiar </h3>
 <p>
-  <strong>Parents relation:</strong>
+  <strong>Estado civil de los padres:</strong>
   <%= @registration.parents_relation %>
 </p>
 <h3> Padre </h3>
 <p>
-  <strong>Apellido y Nombre:</strong>
+  <strong>Nombre y Apellido del Padre:</strong>
   <%= @registration.father_name %>
 </p>
 
 <p>
-  <strong>Edad:</strong>
+  <strong>Edad del Padre:</strong>
   <%= @registration.father_age %>
 </p>
 
@@ -150,12 +151,12 @@
 </p>
 
 <p>
-  <strong> Lo visita:</strong>
+  <strong> ¿Lo ve habitualmente?:</strong>
   <%= boolean_to_text(@registration.father_visit) %>
 </p>
 
 <p>
-  <strong> Correo eléctronico:</strong>
+  <strong> Dirección de email:</strong>
   <%= @registration.father_email %>
 </p>
 
@@ -170,7 +171,7 @@
 </p>
 <h3> Madre </h3>
 <p>
-  <strong>Apellido y Nombre:</strong>
+  <strong>Nombre y apellido:</strong>
   <%= @registration.mother_name %>
 </p>
 
@@ -185,7 +186,7 @@
 </p>
 
 <p>
-  <strong>Lo visita:</strong>
+  <strong> ¿La ve habitualmente?:</strong>
   <%= boolean_to_text(@registration.mother_visit) %>
 </p>
 
@@ -200,17 +201,17 @@
 </p>
 
 <p>
-  <strong>Telefono Laboral:</strong>
+  <strong> Teléfono laboral:</strong>
   <%= @registration.mother_work_phone %>
 </p>
 
 <p>
-  <strong>Quién registra:</strong>
+  <strong>Quién registró:</strong>
   <%= @registration.who_register %>
 </p>
 
 <p>
-  <strong>Da fe de los datos suministrados?:</strong>
+  <strong>Dio fe?:</strong>
   <%= boolean_to_text(@registration.i_attest) %>
 </p>
 

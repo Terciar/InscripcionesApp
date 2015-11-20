@@ -16,4 +16,14 @@ module ApplicationHelper
       @content = tag(:span, class: "badge")
     end
   end
+
+  def fecha_arg(fecha)
+    #devolver la fecha en formato: dia, mes, año
+    fecha.strftime('%d/%m/%Y')
+  end
+ 
+
+  def ordinalizar_abreviado(numero)
+     "#{numero}.º"
+   end
 end
