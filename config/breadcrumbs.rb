@@ -12,23 +12,24 @@ crumb :group do |group|
 end
 
 crumb :registrations do
-  link "Colonos", groups_path
+  link "Colonos", registrations_path
 end
 
-crumb :registration do |registration|
+crumb :registrations do
+   #"action"=>"lista_colonos", "id"=>"4"
+  if keyword = params[:id].presence && params[:action] == "lista_colonos"
+    grupo = Group.find_by_id(keyword)
+    link grupo.nombre, groups_path(keyword)
+    parent :groups
+  else
+    link "Colonos", registrations_path
+  end
+end
+
+crumb :registration do |registration|  
   link registration.colonist_name, registration_path(registration)
   parent :registrations
 end
-
-# crumb :group_notifications do |project|
-#   link "Novedades", project_notifications_path(project)
-#   parent :project, project
-# end
-
-# crumb :notification do |notification|
-#   link notification.title, notification_path(notification)
-#   parent :project_notifications, notification.project
-# end
 
 
 
