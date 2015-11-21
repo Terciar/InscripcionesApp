@@ -65,7 +65,7 @@ class RegistrationsController < ApplicationController
   def destroy
     @registration.destroy
     respond_to do |format|
-      format.html { redirect_to registrations_url, notice: 'Se elimino correctamente el registro.' }
+      format.html { redirect_to registrations_url, notice: 'El colono ha sido eliminado correctamente.' }
       format.json { head :no_content }
     end
   end

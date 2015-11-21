@@ -59,6 +59,7 @@ Cuando(/^(?:presiono|que presione|que hice click en) el botón "(.*?)"$/) do |bu
 end
 
 
+
 #Pa los mensajes de error.
 #Then /^I should see an error message containing "([^\"]*)"$/ do |message|
 #    page.should have_selector('#flash_alert', text: message)

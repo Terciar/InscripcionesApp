@@ -39,7 +39,7 @@ Cuando(/^cancelo$/) do
 end
 
 Entonces(/^el grupo sigue estando en la lista$/) do
-  save_and_open_page
+  #save_and_open_page
 end
 
 Dado(/^que borre todos los grupos$/) do
