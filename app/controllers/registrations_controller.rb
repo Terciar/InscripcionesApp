@@ -80,12 +80,15 @@ class RegistrationsController < ApplicationController
        #Le envio el mail de confirmación.
        # Tell the RegistrationMailer to send a notification email after confirm
        #RegistrationMailer.confirm_registration_email(@registration).deliver_now
+
+       redirect_to :back, notice: "Ha sido CONFIRMADA la inscripción de \"#{@registration.colonist_name}\"."
     end
 
     if params[:admission] == "rechazado"
        @registration.update!(status: 3)
+       redirect_to :back, notice: "Ha sido RECHAZADA la inscripción de \"#{@registration.colonist_name}\"."
     end
-    redirect_to :back, notice: "La admisión del colono fue #{params[:admission]} correctamente."
+    
   end
 
   private
