@@ -7,7 +7,6 @@ Característica: Ver colonos del Grupo (listado)
 Antecedentes:
   Dado que estoy identificado como "Administrador"
   Y he presionado el botón "Ver Grupos" del menú principal
-  #Y me encuentro en la pantalla "ver todos los grupos"
 
 #Camino feliz
 Escenario: Hay 4 inscriptos al grupo (ordenados alfabéticamente)

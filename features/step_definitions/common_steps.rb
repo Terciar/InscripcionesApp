@@ -48,7 +48,7 @@ Entonces(/^mostrame la pagina$/) do
   save_and_open_page
 end
 
-Cuando(/^(?:presiono|que presione|que hice click en) el botón "(.*?)"$/) do |button|
+Cuando(/^(?:presione|presiono|que presione|que hice click en) el botón "(.*?)"$/) do |button|
   #if button == "Guardar cambios"
    #puts("current_user: #{@selection_process.organizer.user_id}#")
    #puts("Weeeep!!!: #{current_user.id}#")
@@ -83,6 +83,21 @@ Dado(/^que (?:presiono|he presionado) el botón "(.*?)" en el renglón del colon
   end
 end
 
+Dado(/^presione el botón "(.*?)" en el renglón del grupo "(.*?)"\.$/) do |boton, nombre_grupo|
+  #save_and_open_page
+  within_table('groups-list') do
+    page.has_content?("#{nombre_grupo}")
+    row = page.find('tr', :text => "#{nombre_grupo}")
+    case boton
+    when "Eliminar"
+      row.find("a.btn-danger:nth-child(1)").click
+    when "Colonos"
+      row.find('a', :text => "Colonos").click
+    else
+      raise 'Que botón buscas?'
+    end
+  end
+end
 
 #Pa los mensajes de error.
 #Then /^I should see an error message containing "([^\"]*)"$/ do |message|
