@@ -37,11 +37,6 @@ Escenario: arrepentido
   Y el colono "Juan Alberto Badía" sigue perteneciendo al "Grupo 1"
 
 
-
-
-
-
-
 #Caso extremo: Grupos insuficientes
 @wip @to-do
 Escenario: Existe solo un grupo definido.
