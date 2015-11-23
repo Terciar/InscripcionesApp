@@ -19,6 +19,8 @@ Dado(/^(?:estoy en la pantalla|me encuentro en la pantalla|estoy en la pantalla 
     visit('registrations')
   when 'Mover grupo'
     #visit('registrations/#{@registration.id}/change_group')
+  when 'Grupos'
+    visit('/admin/groups')
   else
     visit('/¿A donde queres ir?')
   end
@@ -83,7 +85,7 @@ Dado(/^que (?:presiono|he presionado) el botón "(.*?)" en el renglón del colon
   end
 end
 
-Dado(/^presione el botón "(.*?)" en el renglón del grupo "(.*?)"\.$/) do |boton, nombre_grupo|
+Dado(/^(?:presione|presiono) el botón "(.*?)" en el renglón del grupo "(.*?)"\.$/) do |boton, nombre_grupo|
   #save_and_open_page
   within_table('groups-list') do
     page.has_content?("#{nombre_grupo}")
