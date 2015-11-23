@@ -21,5 +21,4 @@ deploy:
   - rake db:drop
   - rake db:schema:load --trace
   - rake db:seed
-  - rake cucumber
   - restart
