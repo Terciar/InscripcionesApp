@@ -32,13 +32,7 @@ Entonces(/^el colono "(.*?)" sigue perteneciendo al "(.*?)"$/) do |nombre_colono
 end
 
 Entonces(/^veo una lista con todos los grupos menos el grupo al que corresponde actualmente a ese colono\.$/) do
-  pending # express the regexp above with the code you wish you had
-end
-
-Cuando(/^selecciono un "(.*?)" de la lista y presiono el botón "(.*?)"$/) do |arg1, arg2|
-  pending # express the regexp above with the code you wish you had
-end
-
-Entonces(/^veo un mensaje El colono "(.*?)" ha sido movido exitosamente al "(.*?)"\.$/) do |arg1, arg2|
-  pending # express the regexp above with the code you wish you had
+  page.has_content?("#group_select")
+  select_menu = all("option").count
+  assert_equal select_menu, 2
 end
