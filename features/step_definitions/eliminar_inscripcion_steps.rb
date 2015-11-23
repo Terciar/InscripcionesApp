@@ -1,14 +1,3 @@
-Cuando(/^que he presionado el botón "(.*?)" en el renglón del colono "(.*?)"$/) do |boton, nombre_colono|
-#save_and_open_page
-  if boton == "Eliminar"
-    within_table('registrations-list') do
-      page.has_content?("#{nombre_colono}")
-      row = page.find('tr', :text => "#{nombre_colono}")
-      row.find("a.btn-danger:nth-child(1)").click
-    end
-  end
-end
-
 Entonces(/^el colono "(.*?)" ya no aparece en la lista$/) do |nombre_colono|
   step %{me encuentro en la pantalla "Colonos"}
   page.has_no_content?("#{nombre_colono}")

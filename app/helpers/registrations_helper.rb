@@ -18,6 +18,17 @@ module RegistrationsHelper
     end
   end
 
+  def gender_text_to_number(gender_text)
+    case gender_text
+    when "Varon" 
+      1
+    when "Mujer"
+      2
+    else
+      "error"
+    end
+  end
+
   def gender_active(gender, posicion)
     if gender == 1 && posicion == 1
         "btn btn-primary fa fa-male active"
@@ -57,7 +68,5 @@ module RegistrationsHelper
     fin_temporada = Date.new(2016,03,31)
     grupos = Group.where(created_at: inicio_temporada..fin_temporada)
   end
-
-
 
 end

@@ -51,8 +51,13 @@ class RegistrationsController < ApplicationController
   def update
     respond_to do |format|
       if @registration.update(registration_params)
-        format.html { redirect_to @registration, notice: 'Se actualizarón los datos correctamente.' }
-        format.json { render :show, status: :ok, location: @registration }
+        if params[:action] == "update" && params[:registration]["group_id"]
+          format.html { redirect_to @registration, notice: "El colono \"#{@registration.colonist_name}\" ha sido movido exitosamente al \"#{@registration.group.nombre}\"." }
+          format.json { render :show, status: :ok, location: @registration }
+        else          
+          format.html { redirect_to @registration, notice: 'Se actualizarón los datos correctamente.' }
+          format.json { render :show, status: :ok, location: @registration }
+        end
       else
         format.html { render :edit }
         format.json { render json: @registration.errors, status: :unprocessable_entity }

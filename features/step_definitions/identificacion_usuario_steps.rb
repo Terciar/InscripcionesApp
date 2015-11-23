@@ -3,7 +3,7 @@ Dado(/^que soy administador registrado$/) do
    step %{existe un Usuario: "Sr. Pepito Argento", "admin@club.com", "clave12345" y "1"}
 end
 
-Dado(/^me identifico como "(.*?)"$/) do |usuario|
+Dado(/^(?:que me encuentro identificado|me identifico) como "(.*?)"$/) do |usuario|
   step %{completo mi email "#{usuario}" y contraseña "clave12345"}
 end
 
@@ -22,8 +22,6 @@ Dado(/^(?:que estoy identificado|que estoy logueado) como? "(.*?)"$/) do |tipo|
     step %{completo mi email "admin@club.com" y contraseña "clave12345"}
   end
 end
-
-
 
 Dado(/^que el usuario esta "(.*?)"$/) do |estado|
   if estado == "habilitado"

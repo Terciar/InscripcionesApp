@@ -17,6 +17,8 @@ Dado(/^(?:estoy en la pantalla|me encuentro en la pantalla|estoy en la pantalla 
     visit('/admin/groups')
   when 'Colonos'
     visit('registrations')
+  when 'Mover grupo'
+    #visit('registrations/#{@registration.id}/change_group')
   else
     visit('/¿A donde queres ir?')
   end
@@ -58,6 +60,28 @@ Cuando(/^(?:presiono|que presione|que hice click en) el botón "(.*?)"$/) do |bu
   click_link_or_button(button) # clicks on either links or buttons
 end
 
+
+Dado(/^que (?:presiono|he presionado) el botón "(.*?)" en el renglón del colono "(.*?)"$/) do |boton, nombre_colono|
+  @nombre_colono = nombre_colono  
+  #save_and_open_page
+  within_table('registrations-list') do
+    page.has_content?("#{nombre_colono}")
+    row = page.find('tr', :text => "#{nombre_colono}")
+    case boton
+    when "Eliminar"
+      row.find("a.btn-danger:nth-child(1)").click
+    when "Confirmar"
+      row.find("a.btn-success:nth-child(1)").click
+    when "Rechazar"
+      row.find("a.btn-danger:nth-child(2)").click
+      #registrations-list > tbody:nth-child(2) > tr:nth-child(3) > td:nth-child(13) > a:nth-child(2)
+    when "Mover"
+      row.find("a.fa-exchange").click
+    else
+      raise 'Que botón buscas?'
+    end
+  end
+end
 
 
 #Pa los mensajes de error.
