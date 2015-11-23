@@ -5,7 +5,7 @@ Característica: Ver todos los Grupos. (Listado)
   Para obtener una visión general los mismos y sus cupos.
 
 Antecedentes:
-    Dado que estoy identificado como "Administrador" 
+  Dado que estoy identificado como "Administrador" 
   Y he presionado el botón "Ver Grupos" del menú principal 
   Y me encuentro en la pantalla "ver todos los grupos"
 

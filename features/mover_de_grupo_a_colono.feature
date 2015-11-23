@@ -19,14 +19,6 @@ Escenario: mover colono
   Cuando presiono el botón "Guardar"
   Entonces veo el mensaje "El colono "Juan Jacinto Perez" ha sido movido exitosamente al "Grupo 1"."
 
-Escenario: arrepentido
-  Dado que presiono el botón "Mover" en el renglón del colono "Juan Jacinto Perez"
-  Entonces veo la pantalla para cambiar de grupo
-  Dado que selecciono de la lista "Grupo 1"
-  Cuando presiono el botón "Volver"
-  Entonces regreso a la pantalla "Colonos"
-  Y el colono "Juan Jacinto Perez" sigue perteneciendo al "Grupo 1"
-
 Escenario: Existen más de un grupo 
   Dado que presiono el botón "Mover" en el renglón del colono "Juan Jacinto Perez"
   Entonces veo una lista con todos los grupos menos el grupo al que corresponde actualmente a ese colono.
@@ -34,6 +26,13 @@ Escenario: Existen más de un grupo
   Cuando presiono el botón "Guardar"
   Entonces veo el mensaje "El colono "Juan Jacinto Perez" ha sido movido exitosamente al "Grupo 2"."
 
+Escenario: arrepentido
+  Dado que presiono el botón "Mover" en el renglón del colono "Juan Jacinto Perez"
+  Entonces veo la pantalla para cambiar de grupo
+  Dado que selecciono de la lista "Grupo 1"
+  Cuando presiono el botón "Volver"
+  Entonces regreso a la pantalla "Colonos"
+  Y el colono "Juan Jacinto Perez" sigue perteneciendo al "Grupo 1"
 
 #Casos extremos
 # Grupos insuficientes

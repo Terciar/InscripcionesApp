@@ -8,8 +8,6 @@ gem 'rails', '4.2.4'
 #gem 'bootstrap-sass'
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'bootswatch-rails'
-
-
  
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -78,6 +76,7 @@ group :development do
 end
 
 group :production do
+  gem 'cucumber-rails', :require => false
   gem 'pg' #base de datos
   gem 'rails_12factor' #algo de heroku para archivos estaticos.
 end
