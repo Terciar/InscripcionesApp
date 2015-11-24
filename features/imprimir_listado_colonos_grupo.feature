@@ -20,8 +20,3 @@ Escenario: Existen inscriptos confirmados.
   Cuando presiono el botón "Imprimir Lista"
   Entonces se imprime una lista con los datos de los 4 inscripos
 
-#Caso extremo
-@wip
-Escenario: No existen inscriptos confirmados
-  Dado que no hay inscriptos al grupo.
-  Entonces veo un mensaje "No existen inscriptos confirmados para el grupo: "<nombre_grupo>""

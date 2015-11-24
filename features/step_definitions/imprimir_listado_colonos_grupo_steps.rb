@@ -8,6 +8,14 @@ end
 Entonces(/^se imprime una lista con los datos de los (\d+) inscripos$/) do |cantidad|
   visit('imprimir_lista_colonos')
   #save_and_open_page
-  #WIP: falta la verificación de que se muestre como se quiere
   step %{veo la lista de los #{cantidad} inscriptos.}
+
+  #WIP: falta la verificación de que se muestre como se quiere
+  #Comprobar Encabezados.
+  #Apellido y Nombre 
+  #Edad 
+  #F. de Nac. 
+  #Domicilio 
+  #Teléfono/s 
+  #Ob.y/o Inf.
 end
