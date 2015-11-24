@@ -17,6 +17,7 @@ Escenario: aceptar colono
   Entonces el botón cambia a la palabra "Aceptado"
   Y el estado del colono "Juan Jacinto Perez" cambia a "Aceptado"
 
+@wip
 Escenario: rechazar colono
   Dado que presiono el botón "Rechazar" en el renglón del colono "Juan Jacinto Perez"
   Entonces veo un mensaje "Ha sido RECHAZADA la inscripción de "Juan Jacinto Perez"."

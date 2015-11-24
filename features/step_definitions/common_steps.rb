@@ -48,7 +48,6 @@ Dado(/^que presione la opción "(.*?)" del menú$/) do |opcion_menu|
   end
 end
 
-
 Entonces(/^mostrame la pagina$/) do
   save_and_open_page
 end

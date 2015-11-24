@@ -18,7 +18,7 @@ Escenario: Existen inscriptos confirmados.
     | Sebastián Pascual Rambert | 9    | Varón | 38412871 | SI    |
     | Juan Román Riquelme       | 10   | Varón | 37455687 | SI    |
   Cuando presiono el botón "Imprimir Lista"
-  Entonces se imprime una lista con los datos de los inscripos
+  Entonces se imprime una lista con los datos de los 4 inscripos
 
 #Caso extremo
 @wip

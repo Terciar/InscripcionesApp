@@ -53,7 +53,7 @@
 </table>
 
 <br>
-<%= link_to 'Imprimir Lista', imprimir_lista_colonos_groups_path(@registrations.first.group.id) , class: "btn btn-default" if @registrations.first  %>
+<%= link_to 'Imprimir Lista', imprimir_lista_colonos_groups_path(params[:id]) , class: "btn btn-default" if params[:id] %>
 <%= link_to 'Volver', :back, class: "btn btn-default"   %>
 <%= link_to 'Regresar al Menú', root_path, class: "btn btn-default"   %>
 </div>
