@@ -64,8 +64,13 @@ class GroupsController < ApplicationController
 
   # GET /registrations
   def lista_colonos
-    @registrations = Registration.all.order('created_at DESC').where(group_id: params[:id])
+    colonos_grupo
     render "registrations/index"
+  end
+
+  def imprimir_lista_colonos
+    colonos_grupo
+    render "registrations/print_list", layout: "print"
   end
 
   private
@@ -77,5 +82,9 @@ class GroupsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def group_params
       params.require(:group).permit(:nombre, :sexo, :quota, :extended_quota, :initial_age, :maximun_age)
+    end
+
+    def colonos_grupo
+      @registrations = Registration.all.order('created_at DESC').where(group_id: params[:id])
     end
 end

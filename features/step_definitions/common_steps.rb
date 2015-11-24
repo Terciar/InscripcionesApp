@@ -21,6 +21,9 @@ Dado(/^(?:estoy en la pantalla|me encuentro en la pantalla|estoy en la pantalla 
     #visit('registrations/#{@registration.id}/change_group')
   when 'Grupos'
     visit('/admin/groups')
+  when 'Ver colonos del Grupo 1'
+    #save_and_open_page
+    visit(lista_colonos_groups_path(1))
   else
     visit('/¿A donde queres ir?')
   end

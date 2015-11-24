@@ -25,3 +25,8 @@ Entonces(/^veo la lista de colonos vacía$/) do
   page.has_table?('registrations-list') #Que exista la tabla
   page.assert_selector('table tbody tr', :count => 0 )
 end
+
+Entonces(/^veo la lista de colonos del grupo vacía$/) do
+  page.has_table?('registrations-list') #Que exista la tabla
+  page.assert_selector('table tbody tr', :count => 0 )
+end

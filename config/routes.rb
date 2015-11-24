@@ -23,6 +23,7 @@ authenticated do
   get 'admin/groups' => 'groups#index'
   get 'registrations/:id/change_group' => 'registrations#change_group', as: :change_group_registration
   get 'admin/groups/:id/lista_colonos' => 'groups#lista_colonos', as: :lista_colonos_groups
+  get 'admin/groups/:id/imprimir_lista_colonos' => 'groups#imprimir_lista_colonos', as: :imprimir_lista_colonos_groups
   
   post 'registrations/:id/confirm_registration' => 'registrations#confirm_registration',as: :confirm_registration
 end

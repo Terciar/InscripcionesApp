@@ -7,6 +7,7 @@ Dado(/^que existe el grupo "(.*?)" para "(.*?)" de "(.*?)" a "(.*?)"$/) do |nomb
      :initial_age => edad_min,
      :maximun_age => edad_max
      })
+      #puts @group.id
 end
 
 Entonces(/^veo la pantalla para cambiar de grupo$/) do
