@@ -10,12 +10,9 @@ Entonces(/^se imprime una lista con los datos de los (\d+) inscripos$/) do |cant
   #save_and_open_page
   step %{veo la lista de los #{cantidad} inscriptos.}
 
-  #WIP: falta la verificación de que se muestre como se quiere
-  #Comprobar Encabezados.
-  #Apellido y Nombre 
-  #Edad 
-  #F. de Nac. 
-  #Domicilio 
-  #Teléfono/s 
-  #Ob.y/o Inf.
+  encabezados = ['Apellido y Nombre','Edad','F. de Nac.','Domicilio','Teléfono/s','Ob.y/o Inf.']
+  encabezados.each do |encabezado|
+    assert page.body.index(encabezado) != nil, msg = "Falto el encabezado: #{encabezado}" 
+    #puts "\e[0;34m\e[47m\Encabezado: #{encabezado}\e[m"
+  end
 end

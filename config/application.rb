@@ -28,7 +28,7 @@ module InscripcionesApp
     config.i18n.default_locale = :es
 
     # OJO con esto, ya que esta permitiendo que se usen iFrame.
-    config.action_dispatch.default_headers = { 'X-Frame-Options' => 'ALLOW-FROM http://buenaonda.terciar.info/' }
+    config.action_dispatch.default_headers = { 'X-Frame-Options' => 'ALLOW-FROM http://actividadesbuenaonda.com/' }
 
     #Para que me cargue lo que este en /lib/
     config.autoload_paths << Rails.root.join('lib')
