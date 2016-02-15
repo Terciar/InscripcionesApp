@@ -1,3 +1,4 @@
+[![Beerpay](http://test.beerpay.io/matiasmasca/InscripcionesApp/badge.svg?style=flat-square)](http://test.beerpay.io/matiasmasca/InscripcionesApp)
 ***Inscripciones App***
 ===
 Repositorio para la edición comunitaria (software libre) de "Inscripciones" una app. para registrar las inscripciones a los cursos para los diferentes grupos de alumnos de una organización deportiva.
